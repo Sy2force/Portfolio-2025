@@ -1,37 +1,32 @@
 services:
-  # Frontend service
-  - type: web
-    name: portfolio-frontend
-    env: static
-    buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: ./frontend/dist
-    pullRequestPreviewsEnabled: true
-    envVars:
-      - key: NODE_VERSION
-        value: 18
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: SAMEORIGIN
-      - path: /*
-        name: X-Content-Type-Options
-        value: nosniff
-      - path: /*
-        name: X-XSS-Protection
-        value: 1; mode=block
-
-  # Backend service (if needed)
+  # Backend API service
   - type: web
     name: portfolio-backend
     env: node
     region: oregon
     plan: free
-    buildCommand: cd backend && npm install
+    buildCommand: cd backend && npm install && npm run build
     startCommand: cd backend && npm start
+    healthCheckPath: /api/health
     envVars:
       - key: NODE_VERSION
         value: 18
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: 5000
+        value: 10000
+      # Add these in Render dashboard:
+      # - MONGODB_URI
+      # - JWT_SECRET
+      # - JWT_REFRESH_SECRET
+      # - REDIS_URL
+      # - SMTP_HOST
+      # - SMTP_PORT
+      # - SMTP_USER
+      # - SMTP_PASS
+      # - CLIENT_URL
+
+databases:
+  - name: portfolio-mongodb
+    databaseName: portfolio
+    user: portfolio
