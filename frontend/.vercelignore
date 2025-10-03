@@ -1,0 +1,16 @@
+node_modules
+.git
+.gitignore
+README.md
+.env
+.env.local
+.vscode
+coverage
+.nyc_output
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
