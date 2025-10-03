@@ -1,0 +1,187 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String    @id @default(cuid())
+  email             String    @unique
+  password          String
+  name              String
+  role              Role      @default(USER)
+  avatar            String?
+  twoFactorSecret   String?
+  twoFactorEnabled  Boolean   @default(false)
+  refreshTokens     String[]
+  lastLogin         DateTime?
+  loginAttempts     Int       @default(0)
+  lockUntil         DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  
+  projects          Project[]
+  contacts          Contact[]
+  
+  @@index([email])
+  @@index([createdAt])
+}
+
+model Project {
+  id                String    @id @default(cuid())
+  title             String
+  slug              String    @unique
+  description       String    @db.VarChar(500)
+  longDescription   String    @db.Text
+  image             String
+  images            String[]
+  technologies      String[]
+  category          Category
+  github            String?
+  demo              String?
+  featured          Boolean   @default(false)
+  year              Int       @default(2024)
+  client            String?
+  duration          String?
+  status            ProjectStatus @default(COMPLETED)
+  views             Int       @default(0)
+  likes             Int       @default(0)
+  order             Int       @default(0)
+  metaTitle         String?
+  metaDescription   String?
+  keywords          String[]
+  isPublished       Boolean   @default(true)
+  publishedAt       DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  
+  author            User      @relation(fields: [authorId], references: [id])
+  authorId          String
+  
+  analytics         Analytics[]
+  
+  @@index([slug])
+  @@index([category])
+  @@index([featured, isPublished])
+  @@index([createdAt])
+}
+
+model Contact {
+  id                String    @id @default(cuid())
+  name              String
+  email             String
+  subject           String
+  message           String    @db.Text
+  phone             String?
+  company           String?
+  budget            Budget    @default(NOT_SPECIFIED)
+  projectType       ProjectType @default(OTHER)
+  status            ContactStatus @default(NEW)
+  priority          Priority  @default(MEDIUM)
+  ipAddress         String?
+  userAgent         String?
+  source            String    @default("website")
+  isSpam            Boolean   @default(false)
+  repliedAt         DateTime?
+  notes             String?   @db.Text
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  
+  assignedTo        User?     @relation(fields: [assignedToId], references: [id])
+  assignedToId      String?
+  
+  @@index([email])
+  @@index([status, priority])
+  @@index([createdAt])
+}
+
+model Analytics {
+  id                String    @id @default(cuid())
+  event             String
+  category          String
+  action            String?
+  label             String?
+  value             Int?
+  page              String?
+  referrer          String?
+  userAgent         String?
+  ipAddress         String?
+  sessionId         String?
+  userId            String?
+  projectId         String?
+  project           Project?  @relation(fields: [projectId], references: [id])
+  createdAt         DateTime  @default(now())
+  
+  @@index([event, category])
+  @@index([sessionId])
+  @@index([createdAt])
+}
+
+model Newsletter {
+  id                String    @id @default(cuid())
+  email             String    @unique
+  name              String?
+  isSubscribed      Boolean   @default(true)
+  subscribedAt      DateTime  @default(now())
+  unsubscribedAt    DateTime?
+  
+  @@index([email])
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum Category {
+  FULL_STACK
+  FRONTEND
+  BACKEND
+  MOBILE
+  DATA_AI
+  FINTECH
+  ECOMMERCE
+  MEDIA
+  PRODUCTIVITY
+  OTHER
+}
+
+enum ProjectStatus {
+  COMPLETED
+  IN_PROGRESS
+  PLANNED
+}
+
+enum ContactStatus {
+  NEW
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum Budget {
+  UNDER_5K
+  BETWEEN_5K_10K
+  BETWEEN_10K_25K
+  BETWEEN_25K_50K
+  OVER_50K
+  NOT_SPECIFIED
+}
+
+enum ProjectType {
+  WEBSITE
+  MOBILE_APP
+  WEB_APP
+  ECOMMERCE
+  CONSULTING
+  OTHER
+}

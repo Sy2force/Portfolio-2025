@@ -1,0 +1,101 @@
+{
+  "navigation": {
+    "home": "בית",
+    "about": "אודות",
+    "skills": "כישורים",
+    "projects": "פרויקטים",
+    "services": "שירותים",
+    "cv": "קורות חיים",
+    "contact": "צור קשר"
+  },
+  "hero": {
+    "greeting": "שלום, אני",
+    "title": "מפתח פול סטאק",
+    "subtitle": "יוצר חוויות דיגיטליות",
+    "cta": {
+      "projects": "צפה בפרויקטים",
+      "contact": "צור קשר"
+    }
+  },
+  "about": {
+    "title": "אודותיי",
+    "bio": "מפתח נלהב היוצר פתרונות חדשניים",
+    "yearsExperience": "שנות ניסיון",
+    "completedProjects": "פרויקטים שהושלמו",
+    "happyClients": "לקוחות מרוצים",
+    "hoursWorked": "שעות עבודה"
+  },
+  "skills": {
+    "title": "הכישורים שלי",
+    "categories": {
+      "frontend": "צד לקוח",
+      "backend": "צד שרת",
+      "tools": "כלים",
+      "soft": "כישורים רכים"
+    }
+  },
+  "projects": {
+    "title": "הפרויקטים שלי",
+    "filter": {
+      "all": "הכל",
+      "web": "אינטרנט",
+      "mobile": "מובייל",
+      "design": "עיצוב"
+    },
+    "viewProject": "צפה בפרויקט",
+    "github": "קוד מקור",
+    "demo": "הדגמה חיה"
+  },
+  "contact": {
+    "title": "צור קשר",
+    "form": {
+      "name": "שם",
+      "email": "אימייל",
+      "subject": "נושא",
+      "message": "הודעה",
+      "send": "שלח",
+      "sending": "שולח..."
+    },
+    "success": "ההודעה נשלחה בהצלחה!",
+    "error": "שגיאה בשליחת ההודעה"
+  },
+  "admin": {
+    "login": {
+      "title": "כניסת מנהל",
+      "email": "אימייל",
+      "password": "סיסמה",
+      "submit": "התחבר",
+      "back": "חזרה לאתר"
+    },
+    "dashboard": {
+      "title": "לוח בקרה",
+      "stats": {
+        "projects": "פרויקטים",
+        "messages": "הודעות",
+        "visits": "ביקורים",
+        "skills": "כישורים"
+      },
+      "notifications": "התראות",
+      "logout": "התנתק"
+    },
+    "projects": {
+      "title": "ניהול פרויקטים",
+      "new": "פרויקט חדש",
+      "edit": "ערוך",
+      "delete": "מחק",
+      "publish": "פרסם",
+      "unpublish": "בטל פרסום"
+    },
+    "profile": {
+      "title": "הפרופיל שלי",
+      "edit": "ערוך פרופיל",
+      "uploadPhoto": "החלף תמונה",
+      "save": "שמור"
+    }
+  },
+  "footer": {
+    "rights": "כל הזכויות שמורות",
+    "madeWith": "נעשה עם",
+    "by": "על ידי"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "services": "Services",
+    "cv": "CV",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "title": "Développeur Full Stack",
+    "subtitle": "Créateur d'expériences numériques",
+    "cta": {
+      "projects": "Voir mes projets",
+      "contact": "Me contacter"
+    }
+  },
+  "about": {
+    "title": "À propos de moi",
+    "bio": "Développeur passionné créant des solutions innovantes",
+    "yearsExperience": "Années d'expérience",
+    "completedProjects": "Projets réalisés",
+    "happyClients": "Clients satisfaits",
+    "hoursWorked": "Heures travaillées"
+  },
+  "skills": {
+    "title": "Mes compétences",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Outils",
+      "soft": "Soft Skills"
+    }
+  },
+  "projects": {
+    "title": "Mes projets",
+    "filter": {
+      "all": "Tous",
+      "web": "Web",
+      "mobile": "Mobile",
+      "design": "Design"
+    },
+    "viewProject": "Voir le projet",
+    "github": "Code source",
+    "demo": "Démo live"
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer",
+      "sending": "Envoi..."
+    },
+    "success": "Message envoyé avec succès!",
+    "error": "Erreur lors de l'envoi"
+  },
+  "admin": {
+    "login": {
+      "title": "Connexion Admin",
+      "email": "Email",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "back": "Retour au site"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "stats": {
+        "projects": "Projets",
+        "messages": "Messages",
+        "visits": "Visites",
+        "skills": "Compétences"
+      },
+      "notifications": "Notifications",
+      "logout": "Déconnexion"
+    },
+    "projects": {
+      "title": "Gestion des projets",
+      "new": "Nouveau projet",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "publish": "Publier",
+      "unpublish": "Dépublier"
+    },
+    "profile": {
+      "title": "Mon profil",
+      "edit": "Modifier le profil",
+      "uploadPhoto": "Changer la photo",
+      "save": "Enregistrer"
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "madeWith": "Fait avec",
+    "by": "par"
+  }
+}

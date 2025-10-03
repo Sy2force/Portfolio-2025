@@ -1,0 +1,101 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "services": "Services",
+    "cv": "Resume",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "title": "Full Stack Developer",
+    "subtitle": "Creating Digital Experiences",
+    "cta": {
+      "projects": "View my projects",
+      "contact": "Get in touch"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "Passionate developer creating innovative solutions",
+    "yearsExperience": "Years of experience",
+    "completedProjects": "Completed projects",
+    "happyClients": "Happy clients",
+    "hoursWorked": "Hours worked"
+  },
+  "skills": {
+    "title": "My Skills",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools",
+      "soft": "Soft Skills"
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "filter": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "design": "Design"
+    },
+    "viewProject": "View project",
+    "github": "Source code",
+    "demo": "Live demo"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending..."
+    },
+    "success": "Message sent successfully!",
+    "error": "Error sending message"
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Login",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Login",
+      "back": "Back to site"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "stats": {
+        "projects": "Projects",
+        "messages": "Messages",
+        "visits": "Visits",
+        "skills": "Skills"
+      },
+      "notifications": "Notifications",
+      "logout": "Logout"
+    },
+    "projects": {
+      "title": "Project Management",
+      "new": "New project",
+      "edit": "Edit",
+      "delete": "Delete",
+      "publish": "Publish",
+      "unpublish": "Unpublish"
+    },
+    "profile": {
+      "title": "My Profile",
+      "edit": "Edit profile",
+      "uploadPhoto": "Change photo",
+      "save": "Save"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with",
+    "by": "by"
+  }
+}
