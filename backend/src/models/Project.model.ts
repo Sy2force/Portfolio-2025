@@ -198,23 +198,6 @@ projectSchema.methods.toggleLike = async function(increment: boolean) {
   return this.save();
 };
 
-// Add missing instance methods
-projectSchema.methods.incrementViews = async function() {
-  this.views += 1;
-  return this.save();
-};
-
-projectSchema.methods.toggleLike = async function(increment: boolean) {
-  this.likes += increment ? 1 : -1;
-  return this.save();
-};
-
-// Add missing static methods
-projectSchema.statics.getFeatured = function(limit = 3) {
-  return this.find({ isPublished: true, featured: true })
-    .sort({ order: -1, createdAt: -1 })
-    .limit(limit);
-};
 
 const Project = mongoose.model<IProject, IProjectModel>('Project', projectSchema);
 

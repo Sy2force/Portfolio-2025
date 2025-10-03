@@ -154,25 +154,6 @@ contactSchema.methods.toggleSpam = async function() {
   return this.save();
 };
 
-// Add missing instance methods
-contactSchema.methods.markAsRead = async function() {
-  if (this.status === 'new') {
-    this.status = 'read';
-    return this.save();
-  }
-  return this;
-};
-
-contactSchema.methods.markAsReplied = async function() {
-  this.status = 'replied';
-  this.repliedAt = new Date();
-  return this.save();
-};
-
-contactSchema.methods.toggleSpam = async function() {
-  this.isSpam = !this.isSpam;
-  return this.save();
-};
 
 const Contact = mongoose.model<IContact>('Contact', contactSchema);
 
