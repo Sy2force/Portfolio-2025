@@ -45,6 +45,7 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   // Check if user is logged in on mount
   useEffect(() => {
     checkAuth();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const checkAuth = async () => {
@@ -173,6 +174,7 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     return () => {
       api.interceptors.response.eject(interceptor);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

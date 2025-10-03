@@ -42,7 +42,8 @@ const AdminProjects = () => {
 
   useEffect(() => {
     filterProjects();
-  }, [searchTerm, filterCategory, projects]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm, filterCategory]);
 
   const fetchProjects = async () => {
     try {

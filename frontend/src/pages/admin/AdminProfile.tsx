@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaCamera, FaSave } from 'react-icons/fa';
-import { useAdmin } from '../../contexts/AdminContext';
-import toast from 'react-hot-toast';
-import { api } from '../../services/api';
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { FaSave, FaEnvelope, FaPhone, FaMapMarkerAlt, FaCamera, FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { api } from '../../services/api'
+import { toast } from 'react-hot-toast'
 
 interface Profile {
   name: string;
@@ -29,7 +28,8 @@ interface Profile {
 }
 
 const AdminProfile = () => {
-  const { } = useAdmin();
+  // Admin context is available if needed
+  // const { isAdmin } = useAdmin();
   const [profile, setProfile] = useState<Profile>({
     name: '',
     title: 'Full Stack Developer',
