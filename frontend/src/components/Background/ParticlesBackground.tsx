@@ -1,110 +1,45 @@
 import { useEffect, useState } from 'react'
-import Particles, { initParticlesEngine } from '@tsparticles/react'
-import { loadSlim } from 'tsparticles-slim'
 
 const ParticlesBackground = () => {
-  const [init, setInit] = useState(false)
+  const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; size: number; color: string }>>([])
 
   useEffect(() => {
-    initParticlesEngine(async (engine: any) => {
-      await loadSlim(engine as any)
-    }).then(() => {
-      setInit(true)
-    })
+    // Simple particle generation without external dependencies
+    const generateParticles = () => {
+      const newParticles = []
+      for (let i = 0; i < 50; i++) {
+        newParticles.push({
+          id: i,
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          size: Math.random() * 3 + 1,
+          color: ['#00d9ff', '#a855f7', '#ec4899', '#22d3ee'][Math.floor(Math.random() * 4)]
+        })
+      }
+      setParticles(newParticles)
+    }
+    generateParticles()
   }, [])
 
-  if (!init) return null
-
   return (
-    <Particles
-      id="tsparticles"
-      options={{
-        background: {
-          color: {
-            value: 'transparent',
-          },
-        },
-        fpsLimit: 120,
-        interactivity: {
-          events: {
-            onClick: {
-              enable: true,
-              mode: 'push',
-            },
-            onHover: {
-              enable: true,
-              mode: 'repulse',
-            },
-            resize: {} as any,
-          },
-          modes: {
-            push: {
-              quantity: 4,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-          },
-        },
-        particles: {
-          color: {
-            value: ['#00d9ff', '#a855f7', '#ec4899', '#22d3ee'],
-          },
-          links: {
-            color: '#00d9ff',
-            distance: 150,
-            enable: true,
-            opacity: 0.2,
-            width: 1,
-          },
-          move: {
-            direction: 'none',
-            enable: true,
-            outModes: {
-              default: 'bounce',
-            },
-            random: false,
-            speed: 1,
-            straight: false,
-          },
-          number: {
-            density: {
-              enable: true,
-            } as any,
-            value: 80,
-          },
-          opacity: {
-            value: 0.5,
-            animation: {
-              enable: true,
-              speed: 1,
-              sync: false,
-            },
-          },
-          shape: {
-            type: 'circle',
-          },
-          size: {
-            value: { min: 1, max: 3 },
-            animation: {
-              enable: true,
-              speed: 2,
-              sync: false,
-            },
-          },
-        },
-        detectRetina: true,
-        style: {
-          position: 'fixed',
-          top: '0',
-          left: '0',
-          width: '100%',
-          height: '100%',
-          zIndex: '-1' as any,
-        },
-      }}
-    />
+    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: -1 }}>
+      {particles.map((particle) => (
+        <div
+          key={particle.id}
+          className="absolute animate-float-slow opacity-50"
+          style={{
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+            backgroundColor: particle.color,
+            borderRadius: '50%',
+            animation: `float ${10 + Math.random() * 10}s ease-in-out infinite`,
+            animationDelay: `${Math.random() * 5}s`
+          }}
+        />
+      ))}
+    </div>
   )
 }
 
