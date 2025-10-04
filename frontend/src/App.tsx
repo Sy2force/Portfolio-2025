@@ -9,6 +9,7 @@ import ParticlesBackground from './components/Background/ParticlesBackground'
 import { AdminProvider, useAdmin } from './contexts/AdminContext'
 import AdminButton from './components/admin/AdminButton'
 import AdminButtonSimple from './components/admin/AdminButtonSimple'
+import PrivateRoute from './components/PrivateRoute'
 import './i18n'
 
 // Lazy load pages for better performance
@@ -20,6 +21,7 @@ const Services = lazy(() => import('./pages/Services'))
 const CV = lazy(() => import('./pages/CV'))
 const Contact = lazy(() => import('./pages/Contact'))
 const AdminPage = lazy(() => import('./pages/AdminPage'))
+const AdminLoginSecure = lazy(() => import('./pages/admin/AdminLoginSecure'))
 const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'))
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'))
 const AdminProjects = lazy(() => import('./pages/admin/AdminProjects'))
@@ -42,15 +44,24 @@ function App() {
       <AdminProvider>
         <div className="min-h-screen bg-dark-primary">
           <Routes>
-            {/* Simple Admin Route (No Auth) */}
-            <Route path="/admin" element={
+            {/* Admin Login Route (Public) */}
+            <Route path="/admin/login" element={
               <Suspense fallback={<Loader />}>
-                <AdminPage />
+                <AdminLoginSecure />
               </Suspense>
             } />
             
-            {/* Protected Admin Routes */}
-            <Route path="/admin/login" element={
+            {/* Protected Admin Route (Requires Auth) */}
+            <Route path="/admin" element={
+              <PrivateRoute>
+                <Suspense fallback={<Loader />}>
+                  <AdminPage />
+                </Suspense>
+              </PrivateRoute>
+            } />
+            
+            {/* Old Protected Admin Routes */}
+            <Route path="/admin/dashboard-old" element={
               <Suspense fallback={<Loader />}>
                 <AdminLogin />
               </Suspense>

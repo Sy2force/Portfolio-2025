@@ -1,13 +1,24 @@
 import { useState, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { HiArrowLeft, HiSave, HiDocumentText, HiUser, HiFolder } from 'react-icons/hi';
+import { Link, useNavigate } from 'react-router-dom';
+import { HiArrowLeft, HiSave, HiDocumentText, HiUser, HiFolder, HiLogout } from 'react-icons/hi';
 import { toast } from 'react-hot-toast';
 
 const AdminPage = () => {
+  const navigate = useNavigate();
   const [projectTitle, setProjectTitle] = useState('');
   const [profileName, setProfileName] = useState('');
   const [cvFile, setCvFile] = useState<File | null>(null);
+
+  // Récupérer l'email de l'admin connecté
+  const adminEmail = localStorage.getItem('adminEmail') || 'Admin';
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAdmin');
+    localStorage.removeItem('adminEmail');
+    toast.success('Déconnexion réussie', { icon: '👋' });
+    navigate('/admin/login');
+  };
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -54,13 +65,28 @@ const AdminPage = () => {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-neon-blue transition-colors duration-300 mb-6"
-          >
-            <HiArrowLeft className="w-5 h-5" />
-            <span>Retour au portfolio</span>
-          </Link>
+          <div className="flex items-center justify-between mb-6">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-neon-blue transition-colors duration-300"
+            >
+              <HiArrowLeft className="w-5 h-5" />
+              <span>Retour au portfolio</span>
+            </Link>
+            
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-gray-400">
+                👤 {adminEmail}
+              </span>
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-2 px-4 py-2 bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 rounded-lg text-red-400 hover:text-red-300 transition-all duration-300"
+              >
+                <HiLogout className="w-4 h-4" />
+                <span className="text-sm">Déconnexion</span>
+              </button>
+            </div>
+          </div>
 
           <div className="flex items-center gap-4">
             <motion.div

@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 import { HiCog } from 'react-icons/hi';
 
 const AdminButtonSimple = () => {
+  // Vérifier si l'utilisateur est déjà connecté
+  const isAdmin = localStorage.getItem('isAdmin') === 'true';
+  const targetRoute = isAdmin ? '/admin' : '/admin/login';
+
   return (
-    <Link to="/admin">
+    <Link to={targetRoute}>
       <motion.div
         className="fixed bottom-6 right-6 z-50 group"
         initial={{ scale: 0, rotate: -180 }}
