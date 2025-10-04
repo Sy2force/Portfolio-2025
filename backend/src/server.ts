@@ -25,6 +25,9 @@ import { errorHandler } from './middleware/errorHandler';
 import { notFound } from './middleware/notFound';
 import { authenticate } from './middleware/auth';
 
+// Import Swagger
+import { setupSwagger } from './swagger';
+
 // Load environment variables
 dotenv.config();
 
@@ -106,6 +109,11 @@ app.use(mongoSanitize());
 // Apply rate limiting
 app.use('/api/', limiter);
 app.use('/api/auth/', strictLimiter);
+
+// Swagger documentation
+if (process.env.NODE_ENV !== 'production') {
+  setupSwagger(app);
+}
 
 // Health check endpoint
 app.get('/health', (req, res) => {
