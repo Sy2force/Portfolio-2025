@@ -8,6 +8,7 @@ import Loader from './components/UI/Loader'
 import ParticlesBackground from './components/Background/ParticlesBackground'
 import { AdminProvider, useAdmin } from './contexts/AdminContext'
 import AdminButton from './components/admin/AdminButton'
+import AdminButtonSimple from './components/admin/AdminButtonSimple'
 import './i18n'
 
 // Lazy load pages for better performance
@@ -18,6 +19,7 @@ const Projects = lazy(() => import('./pages/Projects'))
 const Services = lazy(() => import('./pages/Services'))
 const CV = lazy(() => import('./pages/CV'))
 const Contact = lazy(() => import('./pages/Contact'))
+const AdminPage = lazy(() => import('./pages/AdminPage'))
 const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'))
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'))
 const AdminProjects = lazy(() => import('./pages/admin/AdminProjects'))
@@ -40,7 +42,14 @@ function App() {
       <AdminProvider>
         <div className="min-h-screen bg-dark-primary">
           <Routes>
-            {/* Admin Routes */}
+            {/* Simple Admin Route (No Auth) */}
+            <Route path="/admin" element={
+              <Suspense fallback={<Loader />}>
+                <AdminPage />
+              </Suspense>
+            } />
+            
+            {/* Protected Admin Routes */}
             <Route path="/admin/login" element={
               <Suspense fallback={<Loader />}>
                 <AdminLogin />
@@ -79,13 +88,8 @@ function App() {
                 </Suspense>
                 <Footer />
                 
-                {/* Floating Admin Button */}
-                <AdminButton 
-                  type="settings" 
-                  href="/admin/dashboard" 
-                  className="fixed bottom-6 right-6"
-                  tooltip="Dashboard Admin"
-                />
+                {/* Floating Simple Admin Button */}
+                <AdminButtonSimple />
               </>
             } />
           </Routes>
