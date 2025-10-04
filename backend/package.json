@@ -14,7 +14,8 @@
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
     "migrate": "prisma migrate dev",
-    "generate": "prisma generate"
+    "generate": "prisma generate",
+    "init-data": "ts-node src/scripts/initData.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.7.1",
