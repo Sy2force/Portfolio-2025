@@ -19,6 +19,7 @@ import contactRoutes from './routes/contact.routes';
 import adminRoutes from './routes/admin.routes';
 import analyticsRoutes from './routes/analytics.routes';
 import uploadRoutes from './routes/upload.routes';
+import contentRoutes from './routes/content.routes';
 
 // Import middleware
 import { errorHandler } from './middleware/errorHandler';
@@ -132,6 +133,7 @@ app.use('/api/contact', contactRoutes);
 app.use('/api/admin', authenticate, adminRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/upload', authenticate, uploadRoutes);
+app.use('/api/content', contentRoutes);
 
 // WebSocket handling
 io.on('connection', (socket) => {

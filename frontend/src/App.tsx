@@ -21,6 +21,7 @@ const Services = lazy(() => import('./pages/Services'))
 const CV = lazy(() => import('./pages/CV'))
 const Contact = lazy(() => import('./pages/Contact'))
 const AdminPage = lazy(() => import('./pages/AdminPage'))
+const AdminDashboardComplete = lazy(() => import('./pages/AdminDashboardComplete'))
 const AdminLoginSecure = lazy(() => import('./pages/admin/AdminLoginSecure'))
 const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'))
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'))
@@ -53,6 +54,15 @@ function App() {
             
             {/* Protected Admin Route (Requires Auth) */}
             <Route path="/admin" element={
+              <PrivateRoute>
+                <Suspense fallback={<Loader />}>
+                  <AdminDashboardComplete />
+                </Suspense>
+              </PrivateRoute>
+            } />
+            
+            {/* Old Simple Admin Page */}
+            <Route path="/admin/simple" element={
               <PrivateRoute>
                 <Suspense fallback={<Loader />}>
                   <AdminPage />
