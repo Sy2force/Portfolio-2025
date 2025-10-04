@@ -5,7 +5,7 @@ import speakeasy from 'speakeasy';
 import qrcode from 'qrcode';
 import User from '../models/User.model';
 import { authenticate, refreshToken } from '../middleware/auth';
-import { rateLimiter } from '../middleware/rateLimiter';
+import { authLimiter } from '../middleware/simpleRateLimiter';
 import { logger } from '../server';
 import { sendEmail } from '../utils/email';
 
@@ -22,7 +22,7 @@ const handleValidationErrors = (req: any, res: any, next: any) => {
 
 // Register
 router.post('/register',
-  rateLimiter(5, 60),
+  authLimiter,
   [
     body('email').isEmail().normalizeEmail(),
     body('password').isLength({ min: 8 }).matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/),
@@ -72,7 +72,7 @@ router.post('/register',
 
 // Login
 router.post('/login',
-  rateLimiter(10, 60),
+  authLimiter,
   [
     body('email').isEmail().normalizeEmail(),
     body('password').notEmpty(),
@@ -88,7 +88,7 @@ router.post('/login',
       }
 
       // Check if account is locked
-      if (user.isLocked()) {
+      if (user.lockUntil && user.lockUntil > new Date()) {
         return res.status(423).json({ 
           error: 'Account locked due to too many failed attempts',
           lockedUntil: user.lockUntil,

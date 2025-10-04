@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 import mongoose from 'mongoose';
-import redis from 'redis';
+// Redis import moved to config/redis.ts
 import winston from 'winston';
 
 // Import routes
@@ -42,10 +42,7 @@ const io = new Server(httpServer, {
   },
 });
 
-// Redis client for caching
-export const redisClient = redis.createClient({
-  url: process.env.REDIS_URL || 'redis://localhost:6379',
-});
+// Redis client initialization moved to config
 
 // Logger configuration
 export const logger = winston.createLogger({
@@ -171,16 +168,7 @@ const connectDB = async () => {
   }
 };
 
-// Redis connection
-const connectRedis = async () => {
-  try {
-    await redisClient.connect();
-    logger.info('Redis connected successfully');
-  } catch (error) {
-    logger.error('Redis connection error:', error);
-    // Don't exit if Redis fails, it's optional for caching
-  }
-};
+// Redis connection handled in startServer
 
 // Graceful shutdown
 const gracefulShutdown = async () => {
@@ -199,12 +187,15 @@ const gracefulShutdown = async () => {
     logger.error('Error closing MongoDB connection:', error);
   }
 
-  // Close Redis connection
+  // Close Redis connection if available
   try {
-    await redisClient.quit();
-    logger.info('Redis connection closed');
+    const { redisClient } = await import('./config/redis');
+    if (redisClient?.quit) {
+      await redisClient.quit();
+      logger.info('Redis connection closed');
+    }
   } catch (error) {
-    logger.error('Error closing Redis connection:', error);
+    // Redis might not be connected
   }
 
   process.exit(0);
@@ -219,7 +210,7 @@ const PORT = process.env.PORT || 5000;
 const startServer = async () => {
   try {
     await connectDB();
-    await connectRedis();
+    // Redis is optional - skip if not available
     
     httpServer.listen(PORT, () => {
       logger.info(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);

@@ -28,7 +28,6 @@ export interface IUser extends Document {
   comparePassword(password: string): Promise<boolean>;
   generateAccessToken(): string;
   generateRefreshToken(): Promise<string>;
-  isLocked(): boolean;
   incLoginAttempts(): Promise<any>;
   resetLoginAttempts(): Promise<any>;
 }
@@ -132,11 +131,6 @@ const userSchema = new Schema<IUser>(
 userSchema.index({ email: 1, role: 1 });
 userSchema.index({ createdAt: -1 });
 
-// Virtual for account lock
-userSchema.virtual('isLocked').get(function() {
-  return !!(this.lockUntil && this.lockUntil > new Date());
-});
-
 // Pre-save middleware to hash password
 userSchema.pre('save', async function(next) {
   if (!this.isModified('password')) return next();
@@ -228,10 +222,7 @@ userSchema.methods.resetLoginAttempts = async function() {
   });
 };
 
-// Check if account is locked
-userSchema.methods.isLocked = function() {
-  return !!(this.lockUntil && this.lockUntil > new Date());
-};
+// Check if account is locked (removed method to avoid conflict with virtual property)
 
 const User = mongoose.model<IUser>('User', userSchema);
 

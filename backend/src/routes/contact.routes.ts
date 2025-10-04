@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { body, validationResult } from 'express-validator';
 import Contact from '../models/Contact.model';
 import { authenticate, authorize } from '../middleware/auth';
-import { rateLimiter } from '../middleware/rateLimiter';
+import { apiLimiter } from '../middleware/simpleRateLimiter';
 import { sendEmail } from '../utils/email';
 import { logger } from '../server';
 import { detectSpam } from '../utils/spamDetector';
@@ -20,7 +20,7 @@ const handleValidationErrors = (req: any, res: any, next: any) => {
 
 // Submit contact form (public)
 router.post('/submit',
-  rateLimiter(3, 60), // 3 requests per minute
+  apiLimiter, // Rate limit contact submissions
   [
     body('name').trim().isLength({ min: 2, max: 100 }),
     body('email').isEmail().normalizeEmail(),

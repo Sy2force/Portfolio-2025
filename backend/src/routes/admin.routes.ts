@@ -236,16 +236,9 @@ async function checkDatabaseHealth() {
 
 async function checkCacheHealth() {
   try {
-    const { redisClient } = await import('../server');
-    if (redisClient.isOpen) {
-      const ping = await redisClient.ping();
-      return {
-        status: 'healthy',
-        ping,
-      };
-    }
     return {
-      status: 'disconnected',
+      status: 'disabled',
+      message: 'Redis caching is disabled',
     };
   } catch (error) {
     return {

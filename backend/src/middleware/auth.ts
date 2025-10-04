@@ -30,7 +30,7 @@ export const authenticateToken = async (
       return;
     }
 
-    if (user.isLocked()) {
+    if (user.lockUntil && user.lockUntil > new Date()) {
       res.status(403).json({ error: 'Account is locked' });
       return;
     }
@@ -82,7 +82,7 @@ export const optionalAuth = async (
     const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key') as any;
     const user = await User.findById(decoded.id).select('-password -refreshTokens');
     
-    if (user && !user.isLocked()) {
+    if (user && !(user.lockUntil && user.lockUntil > new Date())) {
       req.user = user;
       req.token = token;
     }

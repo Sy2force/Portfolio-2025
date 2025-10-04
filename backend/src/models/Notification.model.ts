@@ -121,18 +121,23 @@ notificationSchema.statics.createSmartNotifications = async function(userId: str
   }
 
   // Check skills diversity
-  const User = mongoose.model('User');
-  const user = await User.findById(userId);
-  if (user && (!user.skills || user.skills.length < 5)) {
-    notifications.push({
-      userId,
-      type: 'suggestion',
-      title: '💡 Ajoute des compétences',
-      message: 'Enrichis ton profil en ajoutant plus de compétences techniques',
-      actionUrl: '/admin/skills',
-      actionText: 'Gérer les compétences',
-      priority: 'low',
-    });
+  // Avoid circular dependency - import User model dynamically
+  try {
+    const User = mongoose.models.User || require('./User.model').default;
+    const user = await User.findById(userId);
+    if (user && (!user.skills || user.skills.length < 5)) {
+      notifications.push({
+        userId,
+        type: 'suggestion',
+        title: '💡 Ajoute des compétences',
+        message: 'Enrichis ton profil en ajoutant plus de compétences techniques',
+        actionUrl: '/admin/skills',
+        actionText: 'Gérer les compétences',
+        priority: 'low',
+      });
+    }
+  } catch (error) {
+    console.error('Error checking user skills:', error);
   }
 
   // Save all notifications
