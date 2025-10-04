@@ -1,7 +1,4 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { HiPlus } from 'react-icons/hi';
-import { toast } from 'react-hot-toast';
 
 const ProjectsEditor = () => {
   return (
