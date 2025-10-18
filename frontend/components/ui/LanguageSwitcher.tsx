@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { LanguageIcon } from '@heroicons/react/24/outline';

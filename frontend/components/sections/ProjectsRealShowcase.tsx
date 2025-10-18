@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CodeBracketIcon, EyeIcon, StarIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { RealProject, ProjectCategory } from '../../lib/types/real-projects';
@@ -229,12 +228,10 @@ const ProjectsRealShowcase = () => {
                   <div className="relative h-48 overflow-hidden bg-gradient-to-br from-neutral-100 to-neutral-50">
                     {/* Real Project Image */}
                     <div className="absolute inset-0">
-                      <Image 
+                      <img 
                         src={project.image} 
                         alt={project.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     
@@ -362,7 +359,7 @@ const ProjectsRealShowcase = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <Link href="/projects">
+          <Link to="/projects">
             <motion.button
               className="px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto"
               whileHover={{ scale: 1.05, y: -2 }}
