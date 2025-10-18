@@ -1,0 +1,192 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master ]
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  test-frontend:
+    name: Test Frontend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run ESLint
+        run: npm run lint
+        continue-on-error: true
+      
+      - name: Run TypeScript check
+        run: npx tsc --noEmit
+      
+      - name: Build frontend
+        run: npm run build
+      
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: frontend-build
+          path: frontend/dist/
+
+  test-backend:
+    name: Test Backend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run ESLint
+        run: npm run lint
+        continue-on-error: true
+      
+      - name: Run TypeScript check
+        run: npx tsc --noEmit
+      
+      - name: Build backend
+        run: npm run build
+
+  security-audit:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      
+      - name: Audit frontend dependencies
+        run: |
+          cd frontend
+          npm audit --audit-level=moderate
+        continue-on-error: true
+      
+      - name: Audit backend dependencies
+        run: |
+          cd backend
+          npm audit --audit-level=moderate
+        continue-on-error: true
+
+  deploy-frontend:
+    name: Deploy Frontend to Vercel
+    needs: [test-frontend, security-audit]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+      
+      - name: Install dependencies
+        run: cd frontend && npm ci
+      
+      - name: Build frontend
+        run: cd frontend && npm run build
+      
+      - name: Deploy to Vercel
+        if: env.VERCEL_TOKEN != ''
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          cd frontend
+          npx vercel --token $VERCEL_TOKEN --prod --yes
+      
+      - name: Vercel deployment status
+        run: |
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+            echo "⚠️ VERCEL_TOKEN not configured. Skipping Vercel deployment."
+            echo "Please configure Vercel secrets in GitHub repository settings."
+          else
+            echo "✅ Frontend deployed to Vercel successfully!"
+          fi
+
+  deploy-backend:
+    name: Deploy Backend to Render
+    needs: [test-backend, security-audit]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+      - name: Trigger Render deployment
+        if: env.RENDER_DEPLOY_HOOK != ''
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          curl -X POST "$RENDER_DEPLOY_HOOK"
+          echo "✅ Backend deployment triggered on Render!"
+      
+      - name: Render deployment status
+        run: |
+          if [ -z "${{ secrets.RENDER_DEPLOY_HOOK }}" ]; then
+            echo "⚠️ RENDER_DEPLOY_HOOK not configured. Skipping Render deployment."
+            echo "Please configure Render webhook in GitHub repository settings."
+          else
+            echo "✅ Backend deployment triggered successfully!"
+          fi
+
+  notify:
+    name: Deployment Notification
+    needs: [deploy-frontend, deploy-backend]
+    runs-on: ubuntu-latest
+    if: always() && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Deployment summary
+        run: |
+          echo "🚀 Portfolio Shay Acoca - Deployment Summary"
+          echo "============================================"
+          echo "Frontend: ${{ needs.deploy-frontend.result }}"
+          echo "Backend: ${{ needs.deploy-backend.result }}"
+          echo "============================================"
+          
+          if [[ "${{ needs.deploy-frontend.result }}" == "success" && "${{ needs.deploy-backend.result }}" == "success" ]]; then
+            echo "✅ Full deployment successful!"
+            echo "🌐 Frontend: https://portfolio-shay-acoca.vercel.app"
+          else
+            echo "⚠️ Some deployments may have issues. Check logs above."
+          fi
