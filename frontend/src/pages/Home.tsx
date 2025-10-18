@@ -3,15 +3,26 @@ import React from 'react'
 const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
-      <section className="hero-section relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-        <div className="container mx-auto px-4 py-20">
+      <section className="hero-section relative overflow-hidden min-h-screen flex items-center">
+        {/* Photo de couverture en arrière-plan */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/photo-de-couverture.jpg" 
+            alt="Shay Acoca - Développeur Full-Stack" 
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay gradient pour améliorer la lisibilité du texte */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
                 Je suis Shay Acoca
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-xl md:text-2xl text-white mb-8 drop-shadow-lg">
               Développeur Full-Stack & Expert Marketing Digital
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -25,21 +36,21 @@ const Home: React.FC = () => {
             
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">30+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Projets</div>
+              <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-3xl font-bold text-cyan-300">30+</div>
+                <div className="text-sm text-white/80">Projets</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600">50+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Clients</div>
+              <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-3xl font-bold text-blue-300">50+</div>
+                <div className="text-sm text-white/80">Clients</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600">95%</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Rétention</div>
+              <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-3xl font-bold text-green-300">95%</div>
+                <div className="text-sm text-white/80">Rétention</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-600">24h</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Réponse</div>
+              <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-3xl font-bold text-purple-300">24h</div>
+                <div className="text-sm text-white/80">Réponse</div>
               </div>
             </div>
 
@@ -47,13 +58,13 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:scale-105 transition-transform duration-200"
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:scale-105 transition-transform duration-200 shadow-lg"
               >
                 💼 Discuter de votre projet
               </a>
               <a
                 href="/projects"
-                className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200"
+                className="px-8 py-4 border-2 border-white text-white bg-white/10 backdrop-blur-sm rounded-lg font-semibold hover:bg-white/20 transition-colors duration-200"
               >
                 🎯 Voir mes réalisations
               </a>
