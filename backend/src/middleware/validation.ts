@@ -36,7 +36,7 @@ export const contactSchema = Joi.object({
     'string.max': 'Message cannot exceed 5000 characters',
     'any.required': 'Message is required'
   }),
-  phone: Joi.string().pattern(/^[\+]?[1-9][\d]{0,15}$/).optional().messages({
+  phone: Joi.string().pattern(/^[+]?[1-9][\d]{0,15}$/).optional().messages({
     'string.pattern.base': 'Invalid phone number format'
   }),
   company: Joi.string().max(100).optional(),

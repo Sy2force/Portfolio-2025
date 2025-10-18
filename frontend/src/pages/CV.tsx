@@ -32,7 +32,7 @@ const CV: React.FC = () => {
               <div>
                 <h2 className="text-3xl font-bold">Shay Acoca</h2>
                 <p className="text-xl text-gray-600 dark:text-gray-300">Développeur Full-Stack & Expert Marketing Digital</p>
-                <p className="text-gray-500">📍 Jérusalem, Israël | 📧 shay.acoca@example.com | 📱 +972 XX XXX XXXX</p>
+                <p className="text-gray-500">📍 Jérusalem, Israël | 📧 shay.acoca@example.com | 📱 +972 053-3700551</p>
               </div>
             </div>
           </section>

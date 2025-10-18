@@ -127,14 +127,18 @@ jobs:
         run: cd frontend && npm run build
       
       - name: Deploy to Vercel
-        if: env.VERCEL_TOKEN != ''
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
-          cd frontend
-          npx vercel --token $VERCEL_TOKEN --prod --yes
+          if [ -n "$VERCEL_TOKEN" ]; then
+            cd frontend
+            npx vercel --token $VERCEL_TOKEN --prod --yes
+            echo "✅ Frontend deployed to Vercel successfully!"
+          else
+            echo "⚠️ VERCEL_TOKEN not configured. Skipping Vercel deployment."
+          fi
       
       - name: Vercel deployment status
         run: |
@@ -153,12 +157,15 @@ jobs:
     
     steps:
       - name: Trigger Render deployment
-        if: env.RENDER_DEPLOY_HOOK != ''
         env:
           RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
         run: |
-          curl -X POST "$RENDER_DEPLOY_HOOK"
-          echo "✅ Backend deployment triggered on Render!"
+          if [ -n "$RENDER_DEPLOY_HOOK" ]; then
+            curl -X POST "$RENDER_DEPLOY_HOOK"
+            echo "✅ Backend deployment triggered on Render!"
+          else
+            echo "⚠️ RENDER_DEPLOY_HOOK not configured. Skipping Render deployment."
+          fi
       
       - name: Render deployment status
         run: |

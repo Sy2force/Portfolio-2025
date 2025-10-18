@@ -4,7 +4,7 @@ export interface ErrorResponse {
   success: false;
   message: string;
   stack?: string;
-  errors?: any;
+  errors?: unknown;
 }
 
 class AppError extends Error {
@@ -26,13 +26,13 @@ const handleCastErrorDB = (err: any): AppError => {
 };
 
 const handleDuplicateFieldsDB = (err: any): AppError => {
-  const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
+  const value = err.errmsg?.match(/(["'])(\\?.)*?\1/)?.[0] || 'unknown';
   const message = `Duplicate field value: ${value}. Please use another value!`;
   return new AppError(message, 400);
 };
 
 const handleValidationErrorDB = (err: any): AppError => {
-  const errors = Object.values(err.errors).map((el: any) => el.message);
+  const errors = Object.values(err.errors || {}).map((el: any) => el.message);
   const message = `Invalid input data. ${errors.join('. ')}`;
   return new AppError(message, 400);
 };
@@ -44,7 +44,7 @@ const handleJWTExpiredError = (): AppError =>
   new AppError('Your token has expired! Please log in again.', 401);
 
 const sendErrorDev = (err: any, res: Response): void => {
-  res.status(err.statusCode).json({
+  res.status(err.statusCode || 500).json({
     success: false,
     error: err,
     message: err.message,
@@ -55,13 +55,12 @@ const sendErrorDev = (err: any, res: Response): void => {
 const sendErrorProd = (err: any, res: Response): void => {
   // Operational, trusted error: send message to client
   if (err.isOperational) {
-    res.status(err.statusCode).json({
+    res.status(err.statusCode || 500).json({
       success: false,
       message: err.message
     });
   } else {
     // Programming or other unknown error: don't leak error details
-    console.error('ERROR 💥', err);
     res.status(500).json({
       success: false,
       message: 'Something went wrong!'
@@ -73,7 +72,7 @@ export const errorHandler = (
   err: any,
   req: Request,
   res: Response,
-  next: NextFunction
+  _next: NextFunction
 ): void => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
@@ -94,7 +93,7 @@ export const errorHandler = (
   }
 };
 
-export const asyncHandler = (fn: Function) => (req: Request, res: Response, next: NextFunction) => {
+export const asyncHandler = (fn: (req: Request, res: Response, next: NextFunction) => Promise<void>) => (req: Request, res: Response, next: NextFunction) => {
   Promise.resolve(fn(req, res, next)).catch(next);
 };
 

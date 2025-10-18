@@ -1,6 +1,5 @@
 import User from '../models/User';
 import Project from '../models/Project';
-import Contact from '../models/Contact';
 
 export const seedUsers = async () => {
   try {
