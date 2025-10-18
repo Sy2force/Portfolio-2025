@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Particle positioning classes */
+.particle-0 {
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s;
+  animation-duration: 2s;
+}
+
+.particle-1 {
+  left: 80%;
+  top: 10%;
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+
+.particle-2 {
+  left: 60%;
+  top: 70%;
+  animation-delay: 2s;
+  animation-duration: 2.5s;
+}
+
+.particle-3 {
+  left: 30%;
+  top: 80%;
+  animation-delay: 0.5s;
+  animation-duration: 3.5s;
+}
+
+.particle-4 {
+  left: 90%;
+  top: 60%;
+  animation-delay: 1.5s;
+  animation-duration: 2.8s;
+}
+
+/* Scroll progress bar */
+.scroll-progress-bar {
+  width: 0%;
+}
+
+.scroll-progress-0 { width: 0%; }
+.scroll-progress-10 { width: 10%; }
+.scroll-progress-20 { width: 20%; }
+.scroll-progress-30 { width: 30%; }
+.scroll-progress-40 { width: 40%; }
+.scroll-progress-50 { width: 50%; }
+.scroll-progress-60 { width: 60%; }
+.scroll-progress-70 { width: 70%; }
+.scroll-progress-80 { width: 80%; }
+.scroll-progress-90 { width: 90%; }
+.scroll-progress-100 { width: 100%; }
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 transition-colors duration-300;
+  }
+  
+  body.dark {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 dark:bg-gray-800;
+  }
+  
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .text-balance h1 {
+    -webkit-text-wrap: balance;
+    text-wrap: balance;
+  }
+}

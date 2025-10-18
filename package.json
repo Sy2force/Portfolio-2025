@@ -1,0 +1,42 @@
+{
+  "name": "portfolio-shay-acoca",
+  "version": "1.0.0",
+  "description": "Portfolio professionnel full-stack de Shay Acoca",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "deploy:frontend": "cd frontend && vercel --prod",
+    "deploy:backend": "echo 'Deploy backend on Render dashboard'",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && npm test"
+  },
+  "keywords": [
+    "portfolio",
+    "nextjs",
+    "express",
+    "mongodb",
+    "typescript",
+    "tailwind",
+    "full-stack"
+  ],
+  "author": "Shay Acoca <shayacoca20@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sy2force/Portfolio-Shay.git"
+  },
+  "homepage": "https://portfolio-shay-acoca.vercel.app"
+}

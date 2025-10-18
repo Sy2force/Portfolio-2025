@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://shay-acoca.vercel.app/sitemap.xml
+
+# Disallow admin pages
+Disallow: /admin
