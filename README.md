@@ -49,11 +49,19 @@ npm run start  # Serveur production
 
 ### Vercel (Frontend)
 
-Le projet est configuré pour un déploiement automatique sur Vercel:
+Déploiement manuel sur Vercel:
 
-1. Connecte ton repo GitHub à Vercel
-2. Le fichier `vercel.json` est déjà configuré
-3. Les variables d'environnement sont dans `.env.local`
+```bash
+# Via CLI Vercel
+npm i -g vercel
+cd frontend
+vercel --prod
+
+# Ou via interface web Vercel
+# 1. Importe le repo sur vercel.com
+# 2. Configure: Root Directory = frontend
+# 3. Deploy manuellement
+```
 
 ### Render/Railway (Backend)
 

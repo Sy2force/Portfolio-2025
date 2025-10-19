@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Portfolio professionnel de Shay Acoca - Architecture moderne 2024",
   "private": true,
+  "vercel": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
