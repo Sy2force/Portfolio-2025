@@ -13,39 +13,24 @@ const resources = {
   he: { translation: heTranslation }
 };
 
-// Initialize i18n only on client side
-if (typeof window !== 'undefined') {
-  i18n
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    .init({
-      resources,
-      fallbackLng: 'fr',
-      debug: false,
-      
-      interpolation: {
-        escapeValue: false,
-      },
-      
-      detection: {
-        order: ['localStorage', 'navigator', 'htmlTag'],
-        caches: ['localStorage'],
-      }
-    });
-} else {
-  // Server-side initialization
-  i18n
-    .use(initReactI18next)
-    .init({
-      resources,
-      fallbackLng: 'fr',
-      debug: false,
-      lng: 'fr',
-      
-      interpolation: {
-        escapeValue: false,
-      }
-    });
-}
+// Initialize i18n immediately
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: 'fr',
+    debug: false,
+    lng: 'fr',
+    
+    interpolation: {
+      escapeValue: false,
+    },
+    
+    detection: {
+      order: ['localStorage', 'navigator', 'htmlTag'],
+      caches: ['localStorage'],
+    }
+  });
 
 export default i18n;

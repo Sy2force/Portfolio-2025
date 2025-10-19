@@ -4,21 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils/cn';
 import { motion } from 'framer-motion';
-
-interface ButtonProps {
-  children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  href?: string;
-  onClick?: () => void;
-  disabled?: boolean;
-  loading?: boolean;
-  fullWidth?: boolean;
-  icon?: React.ReactNode;
-  iconPosition?: 'left' | 'right';
-  className?: string;
-  type?: 'button' | 'submit' | 'reset';
-}
+import type { ButtonProps } from '@/lib/types';
 
 const Button: React.FC<ButtonProps> = ({
   children,
