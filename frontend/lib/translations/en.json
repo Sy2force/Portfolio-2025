@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact",
+    "cv": "Resume",
+    "availability": "Availability"
+  },
+  "hero": {
+    "title": "Shay Acoca",
+    "subtitle": "Digital Marketing Expert & Full-Stack Developer",
+    "description": "3+ years in digital marketing • HackerU full-stack development training",
+    "location": "📍 Jerusalem, Israel",
+    "available": "Available for new projects",
+    "stats": {
+      "projects": "30+ Projects",
+      "clients": "50+ Clients",
+      "experience": "3+ Years",
+      "satisfaction": "95% Satisfaction"
+    },
+    "cta": {
+      "contact": "Contact Me",
+      "projects": "View Projects",
+      "cv": "Download Resume"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "My Professional Journey",
+    "bio": {
+      "intro": "Digital Marketing Expert and Full-Stack Developer passionate about technological innovation.",
+      "military": "Former IDF soldier (2019-2022)",
+      "education": "HackerU Student - Full-Stack Training (400h)",
+      "experience": "Experience at Bezeq (2022-2024) and freelance"
+    },
+    "skills": {
+      "title": "Skills",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "design": "Design",
+      "marketing": "Digital Marketing"
+    },
+    "values": {
+      "innovation": "Innovation",
+      "quality": "Quality",
+      "collaboration": "Collaboration",
+      "results": "Results"
+    }
+  },
+  "projects": {
+    "title": "Completed Projects",
+    "subtitle": "Discover my achievements with real results",
+    "filter": {
+      "all": "All",
+      "saas": "SaaS",
+      "ecommerce": "E-Commerce",
+      "web": "Websites",
+      "pwa": "PWA",
+      "analytics": "Analytics",
+      "portfolio": "Portfolio"
+    },
+    "stats": {
+      "conversion": "Conversion",
+      "users": "Users",
+      "performance": "Performance",
+      "rating": "Rating"
+    },
+    "cta": {
+      "view": "View Project",
+      "github": "Source Code",
+      "live": "Live Demo"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Solutions tailored to your needs",
+    "development": {
+      "title": "Web Development",
+      "description": "Modern and performant web applications",
+      "features": [
+        "React/Next.js",
+        "Node.js/Express",
+        "MongoDB/PostgreSQL",
+        "REST API/GraphQL"
+      ]
+    },
+    "marketing": {
+      "title": "Digital Marketing",
+      "description": "Digital strategies for your growth",
+      "features": [
+        "SEO/SEM",
+        "Meta Ads",
+        "Google Ads",
+        "Analytics"
+      ]
+    },
+    "design": {
+      "title": "UI/UX Design",
+      "description": "Modern and intuitive interfaces",
+      "features": [
+        "Figma",
+        "Adobe Suite",
+        "Prototyping",
+        "Design System"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's discuss your project",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "info": {
+      "email": "shayacoca20@gmail.com",
+      "phone": "+972 53 XXX XXXX",
+      "location": "Jerusalem, Israel",
+      "availability": "Available Sunday to Thursday"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Shay Acoca. All rights reserved.",
+    "links": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "sitemap": "Sitemap"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close",
+    "more": "See more",
+    "less": "See less",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  }
+}

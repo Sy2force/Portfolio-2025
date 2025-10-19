@@ -50,3 +50,16 @@ Thumbs.db
 
 # MongoDB
 data/
+
+# Playwright Tests
+frontend/test-results/
+frontend/playwright-report/
+
+# Build artifacts
+*.map
+*.log
+
+# Backup files
+*.backup
+*.bak
+*.back*

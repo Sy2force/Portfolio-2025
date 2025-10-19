@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "services": "Services",
+    "contact": "Contact",
+    "cv": "CV",
+    "availability": "Disponibilité"
+  },
+  "hero": {
+    "title": "Shay Acoca",
+    "subtitle": "Expert Marketing Digital & Développeur Full-Stack",
+    "description": "3+ années d'expérience en marketing digital • Formation développement full-stack HackerU",
+    "location": "📍 Jérusalem, Israël",
+    "available": "Disponible pour nouveaux projets",
+    "stats": {
+      "projects": "30+ Projets",
+      "clients": "50+ Clients",
+      "experience": "3+ Années",
+      "satisfaction": "95% Satisfaction"
+    },
+    "cta": {
+      "contact": "Me contacter",
+      "projects": "Voir mes projets",
+      "cv": "Télécharger CV"
+    }
+  },
+  "about": {
+    "title": "À Propos",
+    "subtitle": "Mon parcours professionnel",
+    "bio": {
+      "intro": "Expert Marketing Digital et Développeur Full-Stack passionné par l'innovation technologique.",
+      "military": "Ancien combattant Tsahal (2019-2022)",
+      "education": "Étudiant HackerU - Formation Full-Stack (400h)",
+      "experience": "Expérience chez Bezeq (2022-2024) et freelance"
+    },
+    "skills": {
+      "title": "Compétences",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "design": "Design",
+      "marketing": "Marketing Digital"
+    },
+    "values": {
+      "innovation": "Innovation",
+      "quality": "Qualité",
+      "collaboration": "Collaboration",
+      "results": "Résultats"
+    }
+  },
+  "projects": {
+    "title": "Projets Réalisés",
+    "subtitle": "Découvrez mes réalisations avec des résultats concrets",
+    "filter": {
+      "all": "Tous",
+      "saas": "SaaS",
+      "ecommerce": "E-Commerce",
+      "web": "Sites Web",
+      "pwa": "PWA",
+      "analytics": "Analytics",
+      "portfolio": "Portfolio"
+    },
+    "stats": {
+      "conversion": "Conversion",
+      "users": "Utilisateurs",
+      "performance": "Performance",
+      "rating": "Note"
+    },
+    "cta": {
+      "view": "Voir le projet",
+      "github": "Code source",
+      "live": "Voir en ligne"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Solutions adaptées à vos besoins",
+    "development": {
+      "title": "Développement Web",
+      "description": "Applications web modernes et performantes",
+      "features": [
+        "React/Next.js",
+        "Node.js/Express",
+        "MongoDB/PostgreSQL",
+        "API REST/GraphQL"
+      ]
+    },
+    "marketing": {
+      "title": "Marketing Digital",
+      "description": "Stratégies digitales pour votre croissance",
+      "features": [
+        "SEO/SEM",
+        "Meta Ads",
+        "Google Ads",
+        "Analytics"
+      ]
+    },
+    "design": {
+      "title": "UI/UX Design",
+      "description": "Interfaces modernes et intuitives",
+      "features": [
+        "Figma",
+        "Adobe Suite",
+        "Prototypage",
+        "Design System"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Discutons de votre projet",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "phone": "Téléphone",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer",
+      "sending": "Envoi...",
+      "success": "Message envoyé avec succès!",
+      "error": "Erreur lors de l'envoi"
+    },
+    "info": {
+      "email": "shayacoca20@gmail.com",
+      "phone": "+972 53 XXX XXXX",
+      "location": "Jérusalem, Israël",
+      "availability": "Disponible du dimanche au jeudi"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Shay Acoca. Tous droits réservés.",
+    "links": {
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "sitemap": "Plan du site"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "more": "Voir plus",
+    "less": "Voir moins",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent"
+  }
+}

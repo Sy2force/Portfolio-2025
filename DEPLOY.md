@@ -1,10 +1,6 @@
-# Guide de Déploiement Portfolio Shay Acoca 🚀
+# 🚀 Déploiement Windsurf Portfolio
 
-## 📋 Prérequis
-
-- Compte GitHub
-- Compte Vercel (gratuit)
-- Compte Render (gratuit)
+Guide complet pour déployer le frontend sur **Vercel** et le backend sur **Render**.
 - Compte MongoDB Atlas (gratuit)
 - Gmail avec mot de passe d'application
 

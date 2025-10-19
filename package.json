@@ -2,23 +2,24 @@
   "name": "portfolio-shay-acoca",
   "version": "1.0.0",
   "description": "Portfolio professionnel full-stack de Shay Acoca",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "dev:frontend": "cd frontend && npm run dev",
-    "dev:backend": "cd backend && npm run dev",
-    "build": "npm run build:frontend && npm run build:backend",
-    "build:frontend": "cd frontend && npm run build",
-    "build:backend": "cd backend && npm run build",
-    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
-    "start:frontend": "cd frontend && npm start",
-    "start:backend": "cd backend && npm start",
-    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "deploy:frontend": "cd frontend && vercel --prod",
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w frontend && npm run build -w backend",
+    "start": "concurrently \"npm run start -w backend\" \"npm run start -w frontend\"",
+    "install:all": "npm install",
+    "deploy:frontend": "npm run deploy -w frontend",
     "deploy:backend": "echo 'Deploy backend on Render dashboard'",
-    "test": "npm run test:frontend && npm run test:backend",
-    "test:frontend": "cd frontend && npm test",
-    "test:backend": "cd backend && npm test"
+    "test": "npm run test -w frontend && npm run test -w backend",
+    "test:e2e": "npm run test:e2e -w frontend",
+    "lint": "npm run lint -w frontend && npm run lint -w backend",
+    "lint:fix": "npm run lint:fix -w frontend && npm run lint:fix -w backend",
+    "clean": "./scripts/clean.sh",
+    "setup": "npm install && npm run build"
   },
   "keywords": [
     "portfolio",
@@ -38,5 +39,9 @@
     "type": "git",
     "url": "https://github.com/Sy2force/Portfolio-Shay.git"
   },
-  "homepage": "https://portfolio-shay-acoca.vercel.app"
+  "homepage": "https://portfolio-shay-acoca.vercel.app",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
 }

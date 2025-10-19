@@ -109,11 +109,11 @@ const ProjectsRealShowcase = () => {
 
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-white to-neutral-50">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0 hero-pattern" />
-      </div>
+    <section className="py-20 bg-gradient-to-br from-neutral-50 via-white to-neutral-50" data-testid="projects-showcase">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0 hero-pattern" />
+        </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section Header */}
@@ -209,10 +209,11 @@ const ProjectsRealShowcase = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                onHoverStart={() => setHoveredProject(project.id)}
-                onHoverEnd={() => setHoveredProject(null)}
-                className="group relative"
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-neutral-100"
+                onMouseEnter={() => setHoveredProject(project.id)}
+                onMouseLeave={() => setHoveredProject(null)}
+                data-testid="project-card"
               >
                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-neutral-100">
                   {/* Featured Badge */}

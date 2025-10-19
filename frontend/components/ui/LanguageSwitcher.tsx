@@ -18,7 +18,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="relative group">
+    <div className="relative group" data-testid="language-switcher">
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -35,6 +35,7 @@ const LanguageSwitcher = () => {
           <button
             key={language.code}
             onClick={() => changeLanguage(language.code)}
+            data-testid={`language-option-${language.code}`}
             className={`w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors flex items-center gap-3 ${
               i18n.language === language.code ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
             }`}
