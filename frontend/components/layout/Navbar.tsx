@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import LanguageSwitcher from '../ui/LanguageSwitcher'
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const location = useLocation()
+  const pathname = usePathname()
 
   const navigation = [
     { name: 'Accueil', href: '/' },
@@ -15,7 +17,7 @@ const Navbar: React.FC = () => {
   ]
 
   const isActive = (path: string) => {
-    return location.pathname === path
+    return pathname === path
   }
 
   return (
@@ -23,7 +25,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
               SA
             </div>
@@ -37,7 +39,7 @@ const Navbar: React.FC = () => {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
                     ? 'text-blue-600 bg-blue-50 dark:bg-blue-900/20'
@@ -47,6 +49,7 @@ const Navbar: React.FC = () => {
                 {item.name}
               </Link>
             ))}
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button */}
@@ -76,7 +79,7 @@ const Navbar: React.FC = () => {
               {navigation.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                     isActive(item.href)

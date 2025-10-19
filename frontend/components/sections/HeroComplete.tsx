@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowDownIcon, CodeBracketIcon, DocumentArrowDownIcon } from '@heroicons/react/24/outline';
+import LanguageSwitcher from '../ui/LanguageSwitcher';
 import '../../styles/hero.css';
 
 export default function HeroComplete() {
@@ -14,6 +15,11 @@ export default function HeroComplete() {
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
+        {/* Language Switcher - Top Right */}
+        <div className="absolute top-8 right-8">
+          <LanguageSwitcher />
+        </div>
+
         {/* Content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

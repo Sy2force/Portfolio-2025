@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -66,7 +66,7 @@ const ContactForm: React.FC = () => {
 
               <div className="text-center md:text-left">
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="inline-block px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   Page de contact complète
