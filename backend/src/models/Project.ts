@@ -1,26 +1,72 @@
-import mongoose, { Schema } from 'mongoose';
-import { IProject } from '../types';
+import mongoose, { Schema, Document } from 'mongoose';
+
+export interface IProject extends Document {
+  title: {
+    fr: string;
+    en: string;
+    he: string;
+  };
+  description: {
+    fr: string;
+    en: string;
+    he: string;
+  };
+  technologies: string[];
+  images: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  featured: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
 const ProjectSchema = new Schema<IProject>({
   title: {
-    fr: { type: String, required: true },
-    en: { type: String, required: true },
-    he: { type: String, required: true }
+    fr: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    en: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    he: {
+      type: String,
+      required: true,
+      trim: true
+    }
   },
   description: {
-    fr: { type: String, required: true },
-    en: { type: String, required: true },
-    he: { type: String, required: true }
+    fr: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    en: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    he: {
+      type: String,
+      required: true,
+      trim: true
+    }
   },
   technologies: [{
     type: String,
-    required: true
+    required: true,
+    trim: true
   }],
   images: [{
-    type: String
+    type: String,
+    trim: true
   }],
   githubUrl: {
     type: String,
+    trim: true,
     validate: {
       validator: function(v: string) {
         return !v || /^https?:\/\/.+/.test(v);
@@ -30,6 +76,7 @@ const ProjectSchema = new Schema<IProject>({
   },
   liveUrl: {
     type: String,
+    trim: true,
     validate: {
       validator: function(v: string) {
         return !v || /^https?:\/\/.+/.test(v);
@@ -48,4 +95,4 @@ const ProjectSchema = new Schema<IProject>({
 // Index for better performance
 ProjectSchema.index({ featured: -1, createdAt: -1 });
 
-export default mongoose.model<IProject>('Project', ProjectSchema);
+export const Project = mongoose.model<IProject>('Project', ProjectSchema);

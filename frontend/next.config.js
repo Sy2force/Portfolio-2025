@@ -2,11 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  compress: true,
-  poweredByHeader: false,
-  
   experimental: {
-    optimizePackageImports: ['@heroicons/react', 'framer-motion'],
+    optimizePackageImports: ['framer-motion'],
     turbo: {
       rules: {
         '*.svg': {

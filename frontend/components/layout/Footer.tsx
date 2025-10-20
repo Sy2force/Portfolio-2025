@@ -1,7 +1,11 @@
-import Link from 'next/link'
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
@@ -31,74 +35,117 @@ const Footer: React.FC = () => {
         </svg>
       )
     }
-  ]
+  ];
 
   const quickLinks = [
     { name: 'Accueil', href: '/' },
     { name: 'À Propos', href: '/about' },
     { name: 'Projets', href: '/projects' },
-    { name: 'Services', href: '/services' },
-  ]
+    { name: 'Contact', href: '/contact' },
+    { name: 'CV', href: '/cv' },
+  ];
+
+  const services = [
+    'Développement Web',
+    'Marketing Digital',
+    'UI/UX Design',
+    'Consulting Tech'
+  ];
 
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
-                SA
+    <footer className="relative bg-matrix-dark/95 border-t border-matrix-primary/20">
+      {/* Matrix Grid Background */}
+      <div className="absolute inset-0 bg-grid-subtle opacity-10" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-4 gap-12">
+          {/* Brand Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="md:col-span-2"
+          >
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 glass-card flex items-center justify-center">
+                <span className="matrix-text font-bold text-lg font-matrix">SA</span>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold matrix-text font-matrix">
                 Shay Acoca
               </span>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-4 max-w-md">
+            
+            <p className="text-white/70 mb-6 max-w-md leading-relaxed">
               Développeur Full-Stack et Expert Marketing Digital basé à Jérusalem. 
-              Passionné par la création d'expériences digitales exceptionnelles.
+              Spécialisé dans la création d'expériences digitales exceptionnelles 
+              avec des technologies modernes.
             </p>
+            
             <div className="flex space-x-4">
-              {socialLinks.map((link) => (
-                <a
+              {socialLinks.map((link, index) => (
+                <motion.a
                   key={link.name}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="glass-card p-3 hover:bg-matrix-primary hover:text-matrix-dark transition-all duration-300"
                   aria-label={link.name}
                 >
                   {link.icon}
-                </a>
+                </motion.a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+          {/* Navigation Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="text-lg font-semibold mb-6 matrix-text">
               Navigation
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                    className="text-white/70 hover:text-matrix-primary transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
-              Contact
+          {/* Services Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <h3 className="text-lg font-semibold mb-6 matrix-text">
+              Services
             </h3>
-            <div className="space-y-2 text-gray-600 dark:text-gray-300">
+            <ul className="space-y-3">
+              {services.map((service) => (
+                <li key={service} className="text-white/70">
+                  {service}
+                </li>
+              ))}
+            </ul>
+            
+            <div className="mt-8 space-y-3 text-sm text-white/60">
               <p className="flex items-center gap-2">
                 <span>📍</span>
                 Jérusalem, Israël
@@ -112,23 +159,43 @@ const Footer: React.FC = () => {
                 Réponse sous 24h
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-600 dark:text-gray-300 text-sm">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p className="text-white/60 text-sm">
             © {currentYear} Shay Acoca. Tous droits réservés.
           </p>
-          <div className="flex items-center space-x-4 mt-4 md:mt-0">
-            <span className="px-3 py-1 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-full text-xs font-medium">
-              ✅ Disponible pour projets
-            </span>
+          
+          <div className="flex items-center space-x-6 mt-4 md:mt-0">
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              className="glass-card px-4 py-2 text-xs font-medium"
+            >
+              <span className="w-2 h-2 bg-matrix-success rounded-full inline-block mr-2 animate-pulse" />
+              Disponible pour projets
+            </motion.span>
+            
+            <div className="flex items-center space-x-4 text-xs text-white/40">
+              <Link href="/legal" className="hover:text-white/60 transition-colors">
+                Mentions légales
+              </Link>
+              <Link href="/privacy" className="hover:text-white/60 transition-colors">
+                Confidentialité
+              </Link>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 export default Footer

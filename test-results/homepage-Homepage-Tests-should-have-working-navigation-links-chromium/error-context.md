@@ -1,0 +1,286 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - link "SA Shay Acoca" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e8]: SA
+          - generic [ref=e9]: Shay Acoca
+        - generic [ref=e10]:
+          - link "Accueil" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - link "À Propos" [ref=e14] [cursor=pointer]:
+            - /url: /about
+          - link "Projets" [active] [ref=e16] [cursor=pointer]:
+            - /url: /projects
+          - link "Contact" [ref=e18] [cursor=pointer]:
+            - /url: /contact
+          - link "CV" [ref=e20] [cursor=pointer]:
+            - /url: /cv
+          - button "Switch to light mode" [ref=e22] [cursor=pointer]:
+            - generic [ref=e23]:
+              - img
+              - img [ref=e24]
+    - main [ref=e26]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e35]: Disponible immédiatement
+          - generic [ref=e36]: 📍 Jerusalem
+        - heading "Je suis Shay Acoca" [level=1] [ref=e37]:
+          - generic [ref=e38]: Je suis
+          - generic [ref=e39]: Shay Acoca
+        - paragraph [ref=e40]: Développeur Full-Stack & Expert Marketing Digital
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e43]: 30+
+            - generic [ref=e44]: Projets
+          - generic [ref=e45]:
+            - generic [ref=e46]: 50+
+            - generic [ref=e47]: Clients
+          - generic [ref=e48]:
+            - generic [ref=e49]: 95%
+            - generic [ref=e50]: Rétention
+          - generic [ref=e51]:
+            - generic [ref=e52]: 24h
+            - generic [ref=e53]: Réponse
+        - generic [ref=e54]:
+          - button "💼 Discuter de votre projet" [ref=e55] [cursor=pointer]
+          - button "🎯 Voir mes réalisations" [ref=e56] [cursor=pointer]
+        - generic [ref=e57] [cursor=pointer]:
+          - generic [ref=e58]: Découvrir
+          - img [ref=e60]
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - heading "Mes Réalisations" [level=2] [ref=e65]
+          - paragraph [ref=e66]: Une sélection de projets qui démontrent mon expertise en développement full-stack, design UI/UX et marketing digital.
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]: 💻
+            - heading "Développement Web Full-Stack" [level=3] [ref=e70]
+            - generic [ref=e71]: 15+ projets
+            - paragraph [ref=e72]: React, Next.js, Node.js, MongoDB
+          - generic [ref=e73]:
+            - generic [ref=e74]: 📈
+            - heading "Marketing Digital & Growth" [level=3] [ref=e75]
+            - generic [ref=e76]: +300% ROI
+            - paragraph [ref=e77]: Meta Ads, Google Ads, Analytics
+          - generic [ref=e78]:
+            - generic [ref=e79]: 🎨
+            - heading "UI/UX Design & Branding" [level=3] [ref=e80]
+            - generic [ref=e81]: 50+ designs
+            - paragraph [ref=e82]: Figma, Adobe Suite, Prototyping
+        - generic [ref=e83]:
+          - generic [ref=e85]:
+            - generic:
+              - img "Arrow Agency"
+              - generic [ref=e86]: UI/UX Design
+              - generic [ref=e87]:
+                - link [ref=e88] [cursor=pointer]:
+                  - /url: https://arrow-agency.vercel.app
+                  - img [ref=e89]
+                - link [ref=e91] [cursor=pointer]:
+                  - /url: https://github.com/shayacoca/arrow-agency
+                  - img [ref=e92]
+            - generic [ref=e94]:
+              - heading "Arrow Agency" [level=3] [ref=e95]
+              - paragraph [ref=e96]: Site web moderne pour agence de marketing digital avec animations fluides, design responsive et système de gestion de contenu intégré.
+              - generic [ref=e97]:
+                - generic [ref=e98]: Next.js
+                - generic [ref=e99]: TypeScript
+                - generic [ref=e100]: Tailwind CSS
+                - generic [ref=e101]: Framer Motion
+                - generic [ref=e102]: "+1"
+              - generic [ref=e103]:
+                - generic [ref=e104]:
+                  - link "Voir le projet" [ref=e105] [cursor=pointer]:
+                    - /url: https://arrow-agency.vercel.app
+                  - link "Code source" [ref=e106] [cursor=pointer]:
+                    - /url: https://github.com/shayacoca/arrow-agency
+                - generic [ref=e107]: ⭐ Projet phare
+          - generic [ref=e109]:
+            - generic:
+              - img "JetsetPack"
+              - generic [ref=e110]: E-commerce
+              - generic [ref=e111]:
+                - link [ref=e112] [cursor=pointer]:
+                  - /url: https://jetsetpack.com
+                  - img [ref=e113]
+                - link [ref=e115] [cursor=pointer]:
+                  - /url: https://github.com/shayacoca/jetsetpack
+                  - img [ref=e116]
+            - generic [ref=e118]:
+              - heading "JetsetPack" [level=3] [ref=e119]
+              - paragraph [ref=e120]: Plateforme e-commerce complète pour accessoires de voyage avec paiement sécurisé, gestion des stocks et analytics avancés.
+              - generic [ref=e121]:
+                - generic [ref=e122]: React
+                - generic [ref=e123]: Node.js
+                - generic [ref=e124]: MongoDB
+                - generic [ref=e125]: Stripe
+                - generic [ref=e126]: "+1"
+              - generic [ref=e127]:
+                - generic [ref=e128]:
+                  - link "Voir le projet" [ref=e129] [cursor=pointer]:
+                    - /url: https://jetsetpack.com
+                  - link "Code source" [ref=e130] [cursor=pointer]:
+                    - /url: https://github.com/shayacoca/jetsetpack
+                - generic [ref=e131]: ⭐ Projet phare
+          - generic [ref=e133]:
+            - generic:
+              - img "1948 Agency"
+              - generic [ref=e134]: Branding
+              - link [ref=e136] [cursor=pointer]:
+                - /url: https://1948agency.com
+                - img [ref=e137]
+            - generic [ref=e139]:
+              - heading "1948 Agency" [level=3] [ref=e140]
+              - paragraph [ref=e141]: Stratégie de contenu et design pour agence créative, incluant identité visuelle, site web et campagnes marketing.
+              - generic [ref=e142]:
+                - generic [ref=e143]: Figma
+                - generic [ref=e144]: Adobe Suite
+                - generic [ref=e145]: WordPress
+                - generic [ref=e146]: Google Analytics
+              - link "Voir le projet" [ref=e149] [cursor=pointer]:
+                - /url: https://1948agency.com
+          - generic [ref=e151]:
+            - generic:
+              - img "Koogoo Box"
+              - generic [ref=e152]: Marketing Digital
+              - link [ref=e154] [cursor=pointer]:
+                - /url: https://koogoobox.com
+                - img [ref=e155]
+            - generic [ref=e157]:
+              - heading "Koogoo Box" [level=3] [ref=e158]
+              - paragraph [ref=e159]: Campagnes publicitaires créatives et branding complet pour startup tech, avec ROI de +300% sur 6 mois.
+              - generic [ref=e160]:
+                - generic [ref=e161]: Meta Ads
+                - generic [ref=e162]: Google Ads
+                - generic [ref=e163]: Canva
+                - generic [ref=e164]: Analytics
+              - link "Voir le projet" [ref=e167] [cursor=pointer]:
+                - /url: https://koogoobox.com
+          - generic [ref=e169]:
+            - generic:
+              - img "FuturistCards"
+              - generic [ref=e170]: App Mobile
+              - generic [ref=e171]:
+                - link [ref=e172] [cursor=pointer]:
+                  - /url: https://futuristcards.app
+                  - img [ref=e173]
+                - link [ref=e175] [cursor=pointer]:
+                  - /url: https://github.com/shayacoca/futurist-cards
+                  - img [ref=e176]
+            - generic [ref=e178]:
+              - heading "FuturistCards" [level=3] [ref=e179]
+              - paragraph [ref=e180]: Application React pour cartes de visite digitales avec QR codes, analytics et partage social intégré.
+              - generic [ref=e181]:
+                - generic [ref=e182]: React
+                - generic [ref=e183]: Firebase
+                - generic [ref=e184]: QR.js
+                - generic [ref=e185]: PWA
+              - generic [ref=e187]:
+                - link "Voir le projet" [ref=e188] [cursor=pointer]:
+                  - /url: https://futuristcards.app
+                - link "Code source" [ref=e189] [cursor=pointer]:
+                  - /url: https://github.com/shayacoca/futurist-cards
+          - generic [ref=e191]:
+            - generic:
+              - img "Portfolio 2025"
+              - generic [ref=e192]: Full-Stack
+              - generic [ref=e193]:
+                - link [ref=e194] [cursor=pointer]:
+                  - /url: https://portfolio-shay-acoca.vercel.app
+                  - img [ref=e195]
+                - link [ref=e197] [cursor=pointer]:
+                  - /url: https://github.com/shayacoca/portfolio-2025
+                  - img [ref=e198]
+            - generic [ref=e200]:
+              - heading "Portfolio 2025" [level=3] [ref=e201]
+              - paragraph [ref=e202]: Portfolio full-stack moderne avec design Matrix, glassmorphism, animations avancées et backend Node.js.
+              - generic [ref=e203]:
+                - generic [ref=e204]: Next.js 14
+                - generic [ref=e205]: TypeScript
+                - generic [ref=e206]: Express
+                - generic [ref=e207]: MongoDB
+                - generic [ref=e208]: "+1"
+              - generic [ref=e210]:
+                - link "Voir le projet" [ref=e211] [cursor=pointer]:
+                  - /url: https://portfolio-shay-acoca.vercel.app
+                - link "Code source" [ref=e212] [cursor=pointer]:
+                  - /url: https://github.com/shayacoca/portfolio-2025
+        - generic [ref=e214]:
+          - heading "Prêt à créer quelque chose d'extraordinaire ?" [level=3] [ref=e215]
+          - paragraph [ref=e216]: Discutons de votre projet et transformons vos idées en réalité digitale.
+          - button "🚀 Démarrer un projet" [ref=e217] [cursor=pointer]
+      - generic [ref=e220]:
+        - heading "Transformons vos idées en réalité digitale" [level=2] [ref=e221]
+        - paragraph [ref=e222]: Que vous ayez besoin d'un site web moderne, d'une stratégie marketing performante ou d'une application sur mesure, je suis là pour vous accompagner dans votre transformation digitale.
+        - generic [ref=e223]:
+          - button "🚀 Démarrer un projet" [ref=e224] [cursor=pointer]
+          - button "📋 Voir tous mes projets" [ref=e225] [cursor=pointer]
+    - contentinfo [ref=e226]:
+      - generic [ref=e228]:
+        - generic [ref=e229]:
+          - generic [ref=e230]:
+            - generic [ref=e231]:
+              - generic [ref=e233]: SA
+              - generic [ref=e234]: Shay Acoca
+            - paragraph [ref=e235]: Développeur Full-Stack et Expert Marketing Digital basé à Jérusalem. Spécialisé dans la création d'expériences digitales exceptionnelles avec des technologies modernes.
+            - generic [ref=e236]:
+              - link "GitHub" [ref=e237] [cursor=pointer]:
+                - /url: https://github.com/shayacoca
+                - img [ref=e238]
+              - link "LinkedIn" [ref=e240] [cursor=pointer]:
+                - /url: https://linkedin.com/in/shayacoca
+                - img [ref=e241]
+              - link "Email" [ref=e243] [cursor=pointer]:
+                - /url: mailto:shay.acoca@example.com
+                - img [ref=e244]
+          - generic [ref=e246]:
+            - heading "Navigation" [level=3] [ref=e247]
+            - list [ref=e248]:
+              - listitem [ref=e249]:
+                - link "Accueil" [ref=e250] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e251]:
+                - link "À Propos" [ref=e252] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e253]:
+                - link "Projets" [ref=e254] [cursor=pointer]:
+                  - /url: /projects
+              - listitem [ref=e255]:
+                - link "Contact" [ref=e256] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=e257]:
+                - link "CV" [ref=e258] [cursor=pointer]:
+                  - /url: /cv
+          - generic [ref=e259]:
+            - heading "Services" [level=3] [ref=e260]
+            - list [ref=e261]:
+              - listitem [ref=e262]: Développement Web
+              - listitem [ref=e263]: Marketing Digital
+              - listitem [ref=e264]: UI/UX Design
+              - listitem [ref=e265]: Consulting Tech
+            - generic [ref=e266]:
+              - paragraph [ref=e267]:
+                - generic [ref=e268]: 📍
+                - text: Jérusalem, Israël
+              - paragraph [ref=e269]:
+                - generic [ref=e270]: 📧
+                - text: shay.acoca@example.com
+              - paragraph [ref=e271]:
+                - generic [ref=e272]: ⏰
+                - text: Réponse sous 24h
+        - generic [ref=e273]:
+          - paragraph [ref=e274]: © 2025 Shay Acoca. Tous droits réservés.
+          - generic [ref=e275]:
+            - generic [ref=e276]: Disponible pour projets
+            - generic [ref=e278]:
+              - link "Mentions légales" [ref=e279] [cursor=pointer]:
+                - /url: /legal
+              - link "Confidentialité" [ref=e280] [cursor=pointer]:
+                - /url: /privacy
+  - alert [ref=e281]
+```

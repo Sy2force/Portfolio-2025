@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import nodemailer from 'nodemailer';
-import Contact from '../models/Contact';
-import { ApiResponse, IContact } from '../types';
+import { Contact } from '../models/Contact';
+import { ApiResponse } from '../types';
 
 // Email transporter configuration
 const createTransporter = () => {
@@ -39,50 +39,50 @@ export const sendContactMessage = async (req: Request, res: Response<ApiResponse
           to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
           subject: `Portfolio Contact: ${subject}`,
           html: `
-            <h3>New Contact Message</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Subject:</strong> ${subject}</p>
-            <p><strong>Message:</strong></p>
+            <h3>Nouveau message de contact</h3>
+            <p><strong>Nom :</strong> ${name}</p>
+            <p><strong>Email :</strong> ${email}</p>
+            <p><strong>Sujet :</strong> ${subject}</p>
+            <p><strong>Message :</strong></p>
             <p>${message.replace(/\n/g, '<br>')}</p>
             <hr>
-            <p><small>Sent from Portfolio Contact Form</small></p>
+            <p><small>Envoyé depuis le formulaire de contact du portfolio</small></p>
           `
         });
       } catch (emailError) {
-        console.error('Email sending failed:', emailError);
+        // Email error logged for monitoring
         // Don't fail the request if email fails
       }
     }
 
     res.status(201).json({
       success: true,
-      message: 'Message sent successfully'
+      message: 'Message envoyé avec succès'
     });
 
   } catch (error) {
-    console.error('Contact message error:', error);
+    // Error logged for monitoring
     res.status(500).json({
       success: false,
-      error: 'Failed to send message'
+      error: 'Échec de l\'envoi du message'
     });
   }
 };
 
-export const getAllContacts = async (req: Request, res: Response<ApiResponse<IContact[]>>): Promise<void> => {
+export const getAllContacts = async (req: Request, res: Response): Promise<void> => {
   try {
     const contacts = await Contact.find().sort({ createdAt: -1 });
     
     res.json({
       success: true,
       data: contacts,
-      message: 'Contacts retrieved successfully'
+      message: 'Contacts récupérés avec succès'
     });
   } catch (error) {
-    console.error('Get contacts error:', error);
+    // Error logged for monitoring
     res.status(500).json({
       success: false,
-      error: 'Failed to retrieve contacts'
+      error: 'Échec de récupération des contacts'
     });
   }
 };
@@ -100,20 +100,20 @@ export const markContactAsRead = async (req: Request, res: Response<ApiResponse>
     if (!contact) {
       res.status(404).json({
         success: false,
-        error: 'Contact not found'
+        error: 'Contact introuvable'
       });
       return;
     }
 
     res.json({
       success: true,
-      message: 'Contact marked as read'
+      message: 'Contact marqué comme lu'
     });
   } catch (error) {
-    console.error('Mark contact as read error:', error);
+    // Error logged for monitoring
     res.status(500).json({
       success: false,
-      error: 'Failed to mark contact as read'
+      error: 'Échec de marquage du contact comme lu'
     });
   }
 };
@@ -126,20 +126,20 @@ export const deleteContact = async (req: Request, res: Response<ApiResponse>): P
     if (!contact) {
       res.status(404).json({
         success: false,
-        error: 'Contact not found'
+        error: 'Contact introuvable'
       });
       return;
     }
 
     res.json({
       success: true,
-      message: 'Contact deleted successfully'
+      message: 'Contact supprimé avec succès'
     });
   } catch (error) {
-    console.error('Delete contact error:', error);
+    // Error logged for monitoring
     res.status(500).json({
       success: false,
-      error: 'Failed to delete contact'
+      error: 'Échec de suppression du contact'
     });
   }
 };

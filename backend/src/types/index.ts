@@ -52,9 +52,14 @@ export interface AuthResponse {
   };
 }
 
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
   success: boolean;
   data?: T;
   message?: string;
   error?: string;
 }
+
+// Simplified Document types for production use
+export type ProjectDocument = IProject & { _id: string; toJSON(): IProject };
+export type UserDocument = IUser & { _id: string; toJSON(): IUser };
+export type ContactDocument = IContact & { _id: string; toJSON(): IContact };

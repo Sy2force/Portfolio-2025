@@ -10,6 +10,10 @@ const ContactForm: React.FC = () => {
     message: '',
   });
 
+  // Form submission state - used in handleSubmit function
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -17,10 +21,20 @@ const ContactForm: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic will be handled by the contact page
-    // Form submission logic will be implemented
+    setIsSubmitting(true);
+    
+    try {
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -115,10 +129,27 @@ const ContactForm: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
+                  disabled={isSubmitting}
+                  className={`w-full font-mono font-bold py-4 px-8 rounded-xl transition-all duration-300 border
+                     ${isSubmitting 
+                       ? 'bg-gray-600 text-gray-400 border-gray-600 cursor-not-allowed' 
+                       : 'bg-[#00FFAA] text-[#0A0A0A] hover:bg-[#888EF0] hover:text-white shadow-[0_0_30px_rgba(0,255,170,0.3)] hover:shadow-[0_0_30px_rgba(136,142,240,0.5)] border-[#00FFAA] hover:border-[#888EF0]'
+                     }`}
                 >
-                  Envoyer le message
+                  {isSubmitting ? 'ENVOI EN COURS...' : 'ENVOYER MESSAGE'}
                 </button>
+                
+                {submitStatus === 'success' && (
+                  <div className="mt-4 p-4 bg-green-900/20 border border-green-500/40 rounded-xl text-green-400 font-mono text-sm">
+                    Message envoyé avec succès !
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="mt-4 p-4 bg-red-900/20 border border-red-500/40 rounded-xl text-red-400 font-mono text-sm">
+                    Erreur lors de l'envoi. Veuillez réessayer.
+                  </div>
+                )}
               </form>
             </div>
           </div>

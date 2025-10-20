@@ -1,41 +1,50 @@
-import mongoose, { Schema } from 'mongoose';
-import { IContact } from '../types';
+import mongoose, { Schema, Document } from 'mongoose';
+
+export interface IContact extends Document {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
 const ContactSchema = new Schema<IContact>({
   name: {
     type: String,
-    required: true,
+    required: [true, 'Name is required'],
     trim: true,
-    maxlength: 100
+    minlength: [2, 'Name must be at least 2 characters long'],
+    maxlength: [50, 'Name cannot exceed 50 characters']
   },
   email: {
     type: String,
-    required: true,
-    lowercase: true,
+    required: [true, 'Email is required'],
     trim: true,
-    match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email']
+    lowercase: true,
+    match: [
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      'Please provide a valid email address'
+    ]
   },
   subject: {
     type: String,
-    required: true,
     trim: true,
-    maxlength: 200
+    maxlength: [100, 'Subject cannot exceed 100 characters'],
+    default: 'Contact from Portfolio'
   },
   message: {
     type: String,
-    required: true,
+    required: [true, 'Message is required'],
     trim: true,
-    maxlength: 2000
-  },
-  read: {
-    type: Boolean,
-    default: false
+    minlength: [10, 'Message must be at least 10 characters long'],
+    maxlength: [1000, 'Message cannot exceed 1000 characters']
   }
 }, {
   timestamps: true
 });
 
 // Index for better performance
-ContactSchema.index({ read: 1, createdAt: -1 });
+ContactSchema.index({ createdAt: -1 });
 
-export default mongoose.model<IContact>('Contact', ContactSchema);
+export const Contact = mongoose.model<IContact>('Contact', ContactSchema);

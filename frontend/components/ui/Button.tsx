@@ -4,7 +4,22 @@ import React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils/cn';
 import { motion } from 'framer-motion';
-import type { ButtonProps } from '@/lib/types';
+
+interface ButtonProps {
+  children: React.ReactNode;
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'glass';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  loading?: boolean;
+  className?: string;
+  external?: boolean;
+  fullWidth?: boolean;
+  icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
+}
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -20,14 +35,14 @@ const Button: React.FC<ButtonProps> = ({
   className,
   type = 'button',
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variantStyles = {
-    primary: 'bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 focus:ring-blue-500 shadow-lg hover:shadow-xl',
-    secondary: 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 focus:ring-purple-500 shadow-lg hover:shadow-xl',
-    outline: 'border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 focus:ring-gray-500',
-    ghost: 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus:ring-gray-500',
-    danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-lg hover:shadow-xl',
+    primary: 'bg-gradient-to-r from-[#00FFAA] to-[#888EF0] text-[#0a0a23] hover:shadow-matrix-lg font-bold',
+    secondary: 'bg-gradient-to-r from-[#3C3C66] to-[#888EF0] text-white hover:from-[#888EF0] hover:to-[#00FFAA] shadow-lg hover:shadow-xl',
+    outline: 'border-2 border-[#00FFAA] text-[#00FFAA] hover:bg-[#00FFAA] hover:text-[#0a0a23] focus:ring-[#00FFAA]',
+    ghost: 'text-white hover:bg-white/10 focus:ring-[#888EF0]',
+    glass: 'glass-card text-[#00FFAA] hover:bg-[#00FFAA]/10 border-[#00FFAA]/30',
   };
   
   const sizeStyles = {
@@ -69,6 +84,8 @@ const Button: React.FC<ButtonProps> = ({
           whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
           whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
           aria-disabled={disabled || loading}
+          role="button"
+          tabIndex={disabled || loading ? -1 : 0}
         >
           {content}
         </MotionComponent>

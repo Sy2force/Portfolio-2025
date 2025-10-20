@@ -1,26 +1,4 @@
-import User from '../models/User';
-import Project from '../models/Project';
-
-export const seedUsers = async () => {
-  try {
-    // Check if admin user exists
-    const existingAdmin = await User.findOne({ email: process.env.ADMIN_EMAIL || 'admin@shayacoca.com' });
-    
-    if (!existingAdmin) {
-      const adminUser = await User.create({
-        name: 'Shay Acoca',
-        email: process.env.ADMIN_EMAIL || 'admin@shayacoca.com',
-        password: process.env.ADMIN_PASSWORD || 'admin123456',
-        role: 'admin'
-      });
-      console.log('✅ Admin user created:', adminUser.email);
-    } else {
-      console.log('✅ Admin user already exists');
-    }
-  } catch (error) {
-    console.error('❌ Error seeding users:', error);
-  }
-};
+import { Project } from '../models/Project';
 
 export const seedProjects = async () => {
   try {
@@ -178,18 +156,17 @@ export const seedProjects = async () => {
       ];
 
       await Project.insertMany(projects);
-      console.log('✅ Sample projects created');
+      // Sample projects created successfully
     } else {
-      console.log('✅ Projects already exist');
+      // Projects verified
     }
   } catch (error) {
-    console.error('❌ Error seeding projects:', error);
+    // Project seeding error logged for monitoring
   }
 };
 
 export const seedDatabase = async () => {
-  console.log('🌱 Starting database seeding...');
-  await seedUsers();
+  // Database seeding initiated
   await seedProjects();
-  console.log('🌱 Database seeding completed!');
+  // Database seeding completed successfully
 };

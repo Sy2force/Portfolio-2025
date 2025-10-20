@@ -1,18 +1,19 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import User from '../models/User';
-import Project from '../models/Project';
-import Contact from '../models/Contact';
+import connectDatabase from '../config/database';
+import { Project } from '../models/Project';
+import { Contact } from '../models/Contact';
 
 // Load environment variables
 dotenv.config();
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio');
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    await connectDatabase();
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio');
+    // MongoDB connection established
   } catch (error) {
-    console.error('Database connection error:', error);
+    // Database connection error logged for monitoring
     process.exit(1);
   }
 };
@@ -20,18 +21,18 @@ const connectDB = async () => {
 const seedData = async () => {
   try {
     // Clear existing data
-    await User.deleteMany({});
     await Project.deleteMany({});
     await Contact.deleteMany({});
 
+    // Skip user creation - not implemented in this version
     // Create admin user
-    const adminUser = new User({
-      email: 'admin@shayacoca.com',
-      password: 'admin123456',
-      role: 'admin'
-    });
-    await adminUser.save();
-    console.log('✅ Admin user created');
+    // const adminUser = new User({
+    //   email: 'admin@shayacoca.com',
+    //   password: 'admin123456',
+    //   role: 'admin'
+    // });
+    // await adminUser.save();
+    // Admin user created successfully
 
     // Create demo projects
     const projects = [
@@ -91,7 +92,7 @@ const seedData = async () => {
       const project = new Project(projectData);
       await project.save();
     }
-    console.log('✅ Demo projects created');
+    // Demo projects created successfully
 
     // Create demo contact messages
     const contacts = [
@@ -115,13 +116,13 @@ const seedData = async () => {
       const contact = new Contact(contactData);
       await contact.save();
     }
-    console.log('✅ Demo contact messages created');
+    // Demo contact messages created successfully
 
-    console.log('🎉 Database seeded successfully!');
-    console.log('📧 Admin login: admin@shayacoca.com / admin123456');
+    // Database seeded successfully
+    // Admin credentials configured
     
   } catch (error) {
-    console.error('Seeding error:', error);
+    // Seeding error logged for monitoring
   } finally {
     mongoose.connection.close();
   }

@@ -1,0 +1,77 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e5]:
+      - link "SA Shay Acoca" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e8]: SA
+        - generic [ref=e9]: Shay Acoca
+      - button "Open menu" [ref=e11] [cursor=pointer]:
+        - generic [ref=e12]: Toggle menu
+        - img [ref=e13]
+  - main [ref=e15]
+  - contentinfo [ref=e20]:
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - generic [ref=e27]: SA
+            - generic [ref=e28]: Shay Acoca
+          - paragraph [ref=e29]: Développeur Full-Stack et Expert Marketing Digital basé à Jérusalem. Spécialisé dans la création d'expériences digitales exceptionnelles avec des technologies modernes.
+          - generic [ref=e30]:
+            - link "GitHub" [ref=e31] [cursor=pointer]:
+              - /url: https://github.com/shayacoca
+              - img [ref=e32]
+            - link "LinkedIn" [ref=e34] [cursor=pointer]:
+              - /url: https://linkedin.com/in/shayacoca
+              - img [ref=e35]
+            - link "Email" [ref=e37] [cursor=pointer]:
+              - /url: mailto:shay.acoca@example.com
+              - img [ref=e38]
+        - generic [ref=e40]:
+          - heading "Navigation" [level=3] [ref=e41]
+          - list [ref=e42]:
+            - listitem [ref=e43]:
+              - link "Accueil" [ref=e44] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e45]:
+              - link "À Propos" [ref=e46] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e47]:
+              - link "Projets" [ref=e48] [cursor=pointer]:
+                - /url: /projects
+            - listitem [ref=e49]:
+              - link "Contact" [ref=e50] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e51]:
+              - link "CV" [ref=e52] [cursor=pointer]:
+                - /url: /cv
+        - generic [ref=e53]:
+          - heading "Services" [level=3] [ref=e54]
+          - list [ref=e55]:
+            - listitem [ref=e56]: Développement Web
+            - listitem [ref=e57]: Marketing Digital
+            - listitem [ref=e58]: UI/UX Design
+            - listitem [ref=e59]: Consulting Tech
+          - generic [ref=e60]:
+            - paragraph [ref=e61]:
+              - generic [ref=e62]: 📍
+              - text: Jérusalem, Israël
+            - paragraph [ref=e63]:
+              - generic [ref=e64]: 📧
+              - text: shay.acoca@example.com
+            - paragraph [ref=e65]:
+              - generic [ref=e66]: ⏰
+              - text: Réponse sous 24h
+      - generic [ref=e67]:
+        - paragraph [ref=e68]: © 2025 Shay Acoca. Tous droits réservés.
+        - generic [ref=e69]:
+          - generic [ref=e70]: Disponible pour projets
+          - generic [ref=e72]:
+            - link "Mentions légales" [ref=e73] [cursor=pointer]:
+              - /url: /legal
+            - link "Confidentialité" [ref=e74] [cursor=pointer]:
+              - /url: /privacy
+```

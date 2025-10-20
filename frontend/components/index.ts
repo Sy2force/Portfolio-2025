@@ -1,21 +1,21 @@
+// Layout Components
+export { default as Navbar } from './layout/Navbar';
+export { default as Footer } from './layout/Footer';
+export { default as MatrixBackgroundClient } from './layout/MatrixBackgroundClient';
+
 // UI Components
 export { default as Button } from './ui/Button';
-export { default as Card } from './ui/Card';
-export { default as Modal } from './ui/Modal';
-export { default as Loading } from './ui/Loading';
-export { default as OptimizedImage } from './ui/OptimizedImage';
-export { default as LanguageSelector } from './ui/LanguageSelector';
-
-// Layout Components
-export { default as Footer } from './layout/Footer';
-export { default as Navbar } from './layout/Navbar';
+export { default as ProjectCard } from './ui/ProjectCard';
+export { default as CTASection } from './ui/CTASection';
+export { default as ContactForm } from './ui/ContactForm';
+export { default as Timeline } from './ui/Timeline';
 
 // Section Components
-export { default as HeroSection } from './sections/HeroSection';
-export { default as ProjectsGrid } from './sections/ProjectsGrid';
-export { default as SkillsSection } from './sections/SkillsSection';
-export { default as ServicesSection } from './sections/ServicesSection';
-export { default as Timeline } from './sections/Timeline';
+export { default as Hero } from './sections/Hero';
+export { default as FeaturedProjects } from './sections/FeaturedProjects';
 
-// Form Components
-export { default as ContactForm } from './forms/ContactForm';
+// Provider Components
+export { ThemeProvider, useTheme, ThemeSelector, ThemeToggle } from './providers/ThemeProvider';
+
+// Client Components
+export { default as HomeClient } from '../app/page-client';
