@@ -154,22 +154,25 @@ export default function ProjectsPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-wrap justify-center gap-4 mb-16"
           >
-            {categories.map((category) => (
-              <button
-                key={category.key}
-                onClick={() => setSelectedCategory(category.key)}
-                data-testid="filter-tab"
-                aria-label={`Filtrer par ${category.label}`}
-                aria-pressed={selectedCategory === category.key ? "true" : "false"}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                  selectedCategory === category.key
-                    ? 'bg-gradient-to-r from-[#00FFAA] to-[#888EF0] text-[#0a0a23] shadow-matrix'
-                    : 'glass-card text-white/70 hover:text-[#00FFAA] hover:bg-white/5'
-                }`}
-              >
-                {category.label}
-              </button>
-            ))}
+            {categories.map((category) => {
+              const isSelected = selectedCategory === category.key;
+              return (
+                <button
+                  key={category.key}
+                  onClick={() => setSelectedCategory(category.key)}
+                  data-testid="filter-tab"
+                  aria-label={`Filtrer par ${category.label}`}
+                  aria-pressed={isSelected ? "true" : "false"}
+                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                    isSelected
+                      ? 'bg-gradient-to-r from-[#00FFAA] to-[#888EF0] text-[#0a0a23] shadow-matrix'
+                      : 'glass-card text-white/70 hover:text-[#00FFAA] hover:bg-white/5'
+                  }`}
+                >
+                  {category.label}
+                </button>
+              );
+            })}
           </motion.div>
         </motion.div>
 
