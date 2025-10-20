@@ -1,151 +1,130 @@
 # Page snapshot
 
 ```yaml
-- generic [ref=e1]:
-  - generic [ref=e2]:
-    - navigation [ref=e3]:
-      - generic [ref=e5]:
-        - link "SA Shay Acoca" [ref=e6] [cursor=pointer]:
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e5]:
+      - link "SA Shay Acoca" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e8]: SA
+        - generic [ref=e9]: Shay Acoca
+      - generic [ref=e10]:
+        - link "Accueil" [ref=e12] [cursor=pointer]:
           - /url: /
-          - generic [ref=e8]: SA
-          - generic [ref=e9]: Shay Acoca
-        - generic [ref=e10]:
-          - link "Accueil" [ref=e12] [cursor=pointer]:
-            - /url: /
-          - link "À Propos" [ref=e14] [cursor=pointer]:
-            - /url: /about
-          - link "Projets" [ref=e16] [cursor=pointer]:
-            - /url: /projects
-          - link "Contact" [ref=e18] [cursor=pointer]:
-            - /url: /contact
-          - link "CV" [ref=e20] [cursor=pointer]:
-            - /url: /cv
-          - button "Switch to light mode" [ref=e22] [cursor=pointer]:
-            - generic [ref=e23]:
-              - img
-              - img [ref=e24]
-    - main [ref=e26]:
-      - generic [ref=e27]:
-        - navigation [ref=e32]:
-          - generic [ref=e34]:
-            - link "SA Shay Acoca" [ref=e35] [cursor=pointer]:
-              - /url: /
-              - generic [ref=e37]: SA
-              - generic [ref=e38]: Shay Acoca
-            - generic [ref=e39]:
-              - link "Accueil" [ref=e40] [cursor=pointer]:
+        - link "À Propos" [ref=e14] [cursor=pointer]:
+          - /url: /about
+        - link "Projets" [ref=e16] [cursor=pointer]:
+          - /url: /projects
+        - link "Contact" [ref=e18] [cursor=pointer]:
+          - /url: /contact
+        - link "CV" [ref=e20] [cursor=pointer]:
+          - /url: /cv
+        - button "Loading theme toggle" [disabled] [ref=e22]
+  - main [ref=e23]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - heading "Contactez-moi" [level=1] [ref=e27]
+        - paragraph [ref=e28]: Vous avez un projet en tête ? Transformons vos idées en réalité digitale exceptionnelle.
+      - generic [ref=e29]:
+        - generic [ref=e31]:
+          - heading "Informations de contact" [level=2] [ref=e32]
+          - generic [ref=e33]:
+            - generic [ref=e34]:
+              - img [ref=e36]
+              - generic [ref=e39]:
+                - heading "Email" [level=3] [ref=e40]
+                - paragraph [ref=e41]: shayacoca@gmail.com
+            - generic [ref=e42]:
+              - img [ref=e44]
+              - generic [ref=e46]:
+                - heading "Téléphone" [level=3] [ref=e47]
+                - paragraph [ref=e48]: +972 XX XXX XXXX
+            - generic [ref=e49]:
+              - img [ref=e51]
+              - generic [ref=e54]:
+                - heading "Localisation" [level=3] [ref=e55]
+                - paragraph [ref=e56]: Jérusalem, Israël
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - generic [ref=e60]:
+              - generic [ref=e61]: Nom complet *
+              - textbox "Nom complet *" [ref=e62]:
+                - /placeholder: Votre nom
+            - generic [ref=e63]:
+              - generic [ref=e64]: Email *
+              - textbox "Email *" [ref=e65]:
+                - /placeholder: votre@email.com
+          - generic [ref=e66]:
+            - generic [ref=e67]: Sujet *
+            - textbox "Sujet *" [ref=e68]:
+              - /placeholder: Sujet de votre message
+          - generic [ref=e69]:
+            - generic [ref=e70]: Message *
+            - textbox "Message *" [ref=e71]:
+              - /placeholder: Décrivez votre projet ou posez votre question...
+          - button "Envoyer le message" [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+            - text: Envoyer le message
+  - contentinfo [ref=e76]:
+    - generic [ref=e78]:
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - generic [ref=e83]: SA
+            - generic [ref=e84]: Shay Acoca
+          - paragraph [ref=e85]: Développeur Full-Stack et Expert Marketing Digital basé à Jérusalem. Spécialisé dans la création d'expériences digitales exceptionnelles avec des technologies modernes.
+          - generic [ref=e86]:
+            - link "GitHub" [ref=e87] [cursor=pointer]:
+              - /url: https://github.com/shayacoca
+              - img [ref=e88]
+            - link "LinkedIn" [ref=e90] [cursor=pointer]:
+              - /url: https://linkedin.com/in/shayacoca
+              - img [ref=e91]
+            - link "Email" [ref=e93] [cursor=pointer]:
+              - /url: mailto:shay.acoca@example.com
+              - img [ref=e94]
+        - generic [ref=e96]:
+          - heading "Navigation" [level=3] [ref=e97]
+          - list [ref=e98]:
+            - listitem [ref=e99]:
+              - link "Accueil" [ref=e100] [cursor=pointer]:
                 - /url: /
-              - link "À propos" [ref=e41] [cursor=pointer]:
+            - listitem [ref=e101]:
+              - link "À Propos" [ref=e102] [cursor=pointer]:
                 - /url: /about
-              - link "Projets" [ref=e42] [cursor=pointer]:
+            - listitem [ref=e103]:
+              - link "Projets" [ref=e104] [cursor=pointer]:
                 - /url: /projects
-              - link "Contact" [ref=e43] [cursor=pointer]:
+            - listitem [ref=e105]:
+              - link "Contact" [ref=e106] [cursor=pointer]:
                 - /url: /contact
-        - generic [ref=e45]:
-          - generic [ref=e46]:
-            - heading "Contactez-moi" [level=1] [ref=e47]
-            - paragraph [ref=e49]: Vous avez un projet en tête ? Discutons-en ensemble !
-          - generic [ref=e50]:
-            - generic [ref=e54]:
-              - heading "Informations de contact" [level=2] [ref=e55]
-              - generic [ref=e56]:
-                - generic [ref=e57]:
-                  - img [ref=e59]
-                  - generic [ref=e62]:
-                    - heading "Email" [level=3] [ref=e63]
-                    - paragraph [ref=e64]: shayacoca@gmail.com
-                - generic [ref=e65]:
-                  - img [ref=e67]
-                  - generic [ref=e69]:
-                    - heading "Téléphone" [level=3] [ref=e70]
-                    - paragraph [ref=e71]: +972 XX XXX XXXX
-                - generic [ref=e72]:
-                  - img [ref=e74]
-                  - generic [ref=e77]:
-                    - heading "Localisation" [level=3] [ref=e78]
-                    - paragraph [ref=e79]: Jérusalem, Israël
-            - generic [ref=e83]:
-              - generic [ref=e84]:
-                - generic [ref=e85]:
-                  - generic [ref=e86]: Nom complet *
-                  - textbox "Nom complet *" [active] [ref=e87]:
-                    - /placeholder: Votre nom
-                - generic [ref=e88]:
-                  - generic [ref=e89]: Email *
-                  - textbox "Email *" [ref=e90]:
-                    - /placeholder: votre@email.com
-              - generic [ref=e91]:
-                - generic [ref=e92]: Sujet *
-                - textbox "Sujet *" [ref=e93]:
-                  - /placeholder: Sujet de votre message
-              - generic [ref=e94]:
-                - generic [ref=e95]: Message *
-                - textbox "Message *" [ref=e96]:
-                  - /placeholder: Décrivez votre projet ou posez votre question...
-              - button "Envoyer le message" [ref=e97] [cursor=pointer]:
-                - img [ref=e98]
-                - text: Envoyer le message
-    - contentinfo [ref=e102]:
-      - generic [ref=e104]:
-        - generic [ref=e105]:
-          - generic [ref=e106]:
-            - generic [ref=e107]:
-              - generic [ref=e109]: SA
-              - generic [ref=e110]: Shay Acoca
-            - paragraph [ref=e111]: Développeur Full-Stack et Expert Marketing Digital basé à Jérusalem. Spécialisé dans la création d'expériences digitales exceptionnelles avec des technologies modernes.
-            - generic [ref=e112]:
-              - link "GitHub" [ref=e113] [cursor=pointer]:
-                - /url: https://github.com/shayacoca
-                - img [ref=e114]
-              - link "LinkedIn" [ref=e116] [cursor=pointer]:
-                - /url: https://linkedin.com/in/shayacoca
-                - img [ref=e117]
-              - link "Email" [ref=e119] [cursor=pointer]:
-                - /url: mailto:shay.acoca@example.com
-                - img [ref=e120]
-          - generic [ref=e122]:
-            - heading "Navigation" [level=3] [ref=e123]
-            - list [ref=e124]:
-              - listitem [ref=e125]:
-                - link "Accueil" [ref=e126] [cursor=pointer]:
-                  - /url: /
-              - listitem [ref=e127]:
-                - link "À Propos" [ref=e128] [cursor=pointer]:
-                  - /url: /about
-              - listitem [ref=e129]:
-                - link "Projets" [ref=e130] [cursor=pointer]:
-                  - /url: /projects
-              - listitem [ref=e131]:
-                - link "Contact" [ref=e132] [cursor=pointer]:
-                  - /url: /contact
-              - listitem [ref=e133]:
-                - link "CV" [ref=e134] [cursor=pointer]:
-                  - /url: /cv
-          - generic [ref=e135]:
-            - heading "Services" [level=3] [ref=e136]
-            - list [ref=e137]:
-              - listitem [ref=e138]: Développement Web
-              - listitem [ref=e139]: Marketing Digital
-              - listitem [ref=e140]: UI/UX Design
-              - listitem [ref=e141]: Consulting Tech
-            - generic [ref=e142]:
-              - paragraph [ref=e143]:
-                - generic [ref=e144]: 📍
-                - text: Jérusalem, Israël
-              - paragraph [ref=e145]:
-                - generic [ref=e146]: 📧
-                - text: shay.acoca@example.com
-              - paragraph [ref=e147]:
-                - generic [ref=e148]: ⏰
-                - text: Réponse sous 24h
-        - generic [ref=e149]:
-          - paragraph [ref=e150]: © 2025 Shay Acoca. Tous droits réservés.
-          - generic [ref=e151]:
-            - generic [ref=e152]: Disponible pour projets
-            - generic [ref=e154]:
-              - link "Mentions légales" [ref=e155] [cursor=pointer]:
-                - /url: /legal
-              - link "Confidentialité" [ref=e156] [cursor=pointer]:
-                - /url: /privacy
-  - alert [ref=e157]
+            - listitem [ref=e107]:
+              - link "CV" [ref=e108] [cursor=pointer]:
+                - /url: /cv
+        - generic [ref=e109]:
+          - heading "Services" [level=3] [ref=e110]
+          - list [ref=e111]:
+            - listitem [ref=e112]: Développement Web
+            - listitem [ref=e113]: Marketing Digital
+            - listitem [ref=e114]: UI/UX Design
+            - listitem [ref=e115]: Consulting Tech
+          - generic [ref=e116]:
+            - paragraph [ref=e117]:
+              - generic [ref=e118]: 📍
+              - text: Jérusalem, Israël
+            - paragraph [ref=e119]:
+              - generic [ref=e120]: 📧
+              - text: shay.acoca@example.com
+            - paragraph [ref=e121]:
+              - generic [ref=e122]: ⏰
+              - text: Réponse sous 24h
+      - generic [ref=e123]:
+        - paragraph [ref=e124]: © 2025 Shay Acoca. Tous droits réservés.
+        - generic [ref=e125]:
+          - generic [ref=e126]: Disponible pour projets
+          - generic [ref=e128]:
+            - link "Mentions légales" [ref=e129] [cursor=pointer]:
+              - /url: /legal
+            - link "Confidentialité" [ref=e130] [cursor=pointer]:
+              - /url: /privacy
 ```

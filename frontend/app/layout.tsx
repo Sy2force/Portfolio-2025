@@ -8,6 +8,7 @@ import MatrixBackgroundClient from '../components/layout/MatrixBackgroundClient'
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://portfolio-2025-ashy-theta.vercel.app'),
   title: 'Portfolio Shay Acoca - Développeur Full-Stack & Expert Marketing',
   description: 'Portfolio professionnel de Shay Acoca, développeur full-stack et expert en marketing digital basé à Jérusalem. Spécialisé en React, Next.js, Node.js, MongoDB et stratégies digitales innovantes.',
   keywords: ['Shay Acoca', 'développeur full-stack', 'marketing digital', 'Next.js', 'React', 'Node.js', 'MongoDB', 'TypeScript', 'Tailwind CSS', 'Jérusalem', 'Israël', 'portfolio', 'développeur web', 'expert marketing'],

@@ -1,7 +1,7 @@
 # Page snapshot
 
 ```yaml
-- generic [active] [ref=e1]:
+- generic [ref=e1]:
   - generic [ref=e2]:
     - navigation [ref=e3]:
       - generic [ref=e5]:
@@ -54,18 +54,22 @@
                 - generic [ref=e64]: Nom complet *
                 - textbox "Nom complet *" [ref=e65]:
                   - /placeholder: Votre nom
+                  - text: Test User
               - generic [ref=e66]:
                 - generic [ref=e67]: Email *
                 - textbox "Email *" [ref=e68]:
                   - /placeholder: votre@email.com
+                  - text: test@example.com
             - generic [ref=e69]:
               - generic [ref=e70]: Sujet *
               - textbox "Sujet *" [ref=e71]:
                 - /placeholder: Sujet de votre message
+                - text: Test Subject
             - generic [ref=e72]:
               - generic [ref=e73]: Message *
-              - textbox "Message *" [ref=e74]:
+              - textbox "Message *" [active] [ref=e74]:
                 - /placeholder: Décrivez votre projet ou posez votre question...
+                - text: This is a test message
             - button "Envoyer le message" [ref=e75] [cursor=pointer]:
               - img [ref=e76]
               - text: Envoyer le message

@@ -13,215 +13,178 @@
           - generic [ref=e12]: Toggle menu
           - img [ref=e13]
     - main [ref=e15]:
-      - generic [ref=e16]:
-        - navigation [ref=e21]:
-          - link "SA Shay Acoca" [ref=e24] [cursor=pointer]:
-            - /url: /
-            - generic [ref=e26]: SA
-            - generic [ref=e27]: Shay Acoca
-        - main [ref=e28]:
-          - generic [ref=e29]:
-            - generic [ref=e30]:
-              - heading "Mes Projets Matrix" [level=1] [ref=e31]
-              - paragraph [ref=e33]: Une collection de projets futuristes combinant technologies avancées, design immersif et expériences utilisateur exceptionnelles.
-              - generic [ref=e34]:
-                - button "Tous les projets" [ref=e35] [cursor=pointer]
-                - button "Mis en avant" [ref=e36] [cursor=pointer]
-                - button "Next.js" [ref=e37] [cursor=pointer]
-                - button "React" [ref=e38] [cursor=pointer]
-                - button "TypeScript" [ref=e39] [cursor=pointer]
-            - generic [ref=e41]:
-              - generic [ref=e44]:
-                - generic [ref=e46]: ⭐ FEATURED
-                - generic [ref=e47]: 💻
-                - generic [ref=e48]:
-                  - generic [ref=e50]:
-                    - heading "Project React Futuriste Card" [level=3] [ref=e51]
-                    - paragraph [ref=e52]: Projet de cartes futuristes interactives avec animations avancées, effets visuels immersifs et design cyberpunk moderne.
-                    - generic [ref=e53]:
-                      - generic [ref=e54]: React
-                      - generic [ref=e55]: CSS3
-                      - generic [ref=e56]: JavaScript
-                      - generic [ref=e57]: Animations
-                      - generic [ref=e58]: UI/UX
-                  - generic [ref=e59]:
-                    - link "Voir le projet" [ref=e60] [cursor=pointer]:
-                      - /url: https://sy2force.github.io/Project-react/?utm_source=chatgpt.com
-                      - text: Voir le projet
-                      - img [ref=e61]
-                    - generic [ref=e63]:
-                      - link "Voir le site live" [ref=e64] [cursor=pointer]:
-                        - /url: https://sy2force.github.io/Project-react/?utm_source=chatgpt.com
-                        - img [ref=e65]
-                      - link "Code source" [ref=e69] [cursor=pointer]:
-                        - /url: https://github.com/Sy2force/Project-react
-                        - img [ref=e70]
-              - generic [ref=e74]:
-                - generic [ref=e76]: ⭐ FEATURED
-                - generic [ref=e77]: 💻
-                - generic [ref=e78]:
-                  - generic [ref=e80]:
-                    - heading "Matrix E-Commerce Platform" [level=3] [ref=e81]
-                    - paragraph [ref=e82]: Plateforme e-commerce futuriste avec animations Matrix, paiements Stripe et dashboard analytics en temps réel.
-                    - generic [ref=e83]:
-                      - generic [ref=e84]: Next.js 14
-                      - generic [ref=e85]: TypeScript
-                      - generic [ref=e86]: Tailwind CSS
-                      - generic [ref=e87]: Stripe
-                      - generic [ref=e88]: Framer Motion
-                  - generic [ref=e89]:
-                    - link "Voir le projet" [ref=e90] [cursor=pointer]:
-                      - /url: https://matrix-ecommerce.vercel.app
-                      - text: Voir le projet
-                      - img [ref=e91]
-                    - generic [ref=e93]:
-                      - link "Voir le site live" [ref=e94] [cursor=pointer]:
-                        - /url: https://matrix-ecommerce.vercel.app
-                        - img [ref=e95]
-                      - link "Code source" [ref=e99] [cursor=pointer]:
-                        - /url: https://github.com/shayacoca/matrix-ecommerce
-                        - img [ref=e100]
-              - generic [ref=e104]:
-                - generic [ref=e106]: ⭐ FEATURED
-                - generic [ref=e107]: 💻
-                - generic [ref=e108]:
-                  - generic [ref=e110]:
-                    - heading "Neural Network Dashboard" [level=3] [ref=e111]
-                    - paragraph [ref=e112]: Dashboard d'intelligence artificielle avec visualisations 3D et monitoring en temps réel des performances ML.
-                    - generic [ref=e113]:
-                      - generic [ref=e114]: React
-                      - generic [ref=e115]: Three.js
-                      - generic [ref=e116]: D3.js
-                      - generic [ref=e117]: Node.js
-                      - generic [ref=e118]: TensorFlow.js
-                  - generic [ref=e119]:
-                    - link "Voir le projet" [ref=e120] [cursor=pointer]:
-                      - /url: https://neural-dashboard.vercel.app
-                      - text: Voir le projet
-                      - img [ref=e121]
-                    - generic [ref=e123]:
-                      - link "Voir le site live" [ref=e124] [cursor=pointer]:
-                        - /url: https://neural-dashboard.vercel.app
-                        - img [ref=e125]
-                      - link "Code source" [ref=e129] [cursor=pointer]:
-                        - /url: https://github.com/shayacoca/neural-dashboard
-                        - img [ref=e130]
-              - generic [ref=e134]:
-                - generic [ref=e135]: 💻
-                - generic [ref=e136]:
-                  - generic [ref=e138]:
-                    - heading "Crypto Matrix Tracker" [level=3] [ref=e139]
-                    - paragraph [ref=e140]: Application de suivi crypto avec effets Matrix, graphiques interactifs et alertes push en temps réel.
-                    - generic [ref=e141]:
-                      - generic [ref=e142]: React Native
-                      - generic [ref=e143]: Expo
-                      - generic [ref=e144]: Firebase
-                      - generic [ref=e145]: Web3.js
-                      - generic [ref=e146]: Chart.js
-                  - generic [ref=e147]:
-                    - link "Voir le projet" [ref=e148] [cursor=pointer]:
-                      - /url: https://crypto-matrix.app
-                      - text: Voir le projet
-                      - img [ref=e149]
-                    - generic [ref=e151]:
-                      - link "Voir le site live" [ref=e152] [cursor=pointer]:
-                        - /url: https://crypto-matrix.app
-                        - img [ref=e153]
-                      - link "Code source" [ref=e157] [cursor=pointer]:
-                        - /url: https://github.com/shayacoca/crypto-matrix
-                        - img [ref=e158]
-              - generic [ref=e162]:
-                - generic [ref=e163]: 💻
-                - generic [ref=e164]:
-                  - generic [ref=e166]:
-                    - heading "Digital Art Gallery" [level=3] [ref=e167]
-                    - paragraph [ref=e168]: Galerie d'art numérique avec effets visuels immersifs et marketplace NFT intégré.
-                    - generic [ref=e169]:
-                      - generic [ref=e170]: Vue.js
-                      - generic [ref=e171]: WebGL
-                      - generic [ref=e172]: GSAP
-                      - generic [ref=e173]: Solidity
-                      - generic [ref=e174]: IPFS
-                  - generic [ref=e175]:
-                    - link "Voir le projet" [ref=e176] [cursor=pointer]:
-                      - /url: https://digital-art-matrix.com
-                      - text: Voir le projet
-                      - img [ref=e177]
-                    - generic [ref=e179]:
-                      - link "Voir le site live" [ref=e180] [cursor=pointer]:
-                        - /url: https://digital-art-matrix.com
-                        - img [ref=e181]
-                      - link "Code source" [ref=e185] [cursor=pointer]:
-                        - /url: https://github.com/shayacoca/digital-art-gallery
-                        - img [ref=e186]
-            - generic [ref=e189]:
-              - heading "Prêt à créer quelque chose d'extraordinaire ?" [level=3] [ref=e190]
-              - paragraph [ref=e191]: Discutons de votre prochain projet et transformons vos idées en réalité digitale immersive.
-              - link "Démarrer un projet" [ref=e192] [cursor=pointer]:
-                - /url: /contact
-                - text: Démarrer un projet
-                - img [ref=e193]
-    - contentinfo [ref=e195]:
-      - generic [ref=e197]:
-        - generic [ref=e198]:
-          - generic [ref=e199]:
-            - generic [ref=e200]:
-              - generic [ref=e202]: SA
-              - generic [ref=e203]: Shay Acoca
-            - paragraph [ref=e204]: Développeur Full-Stack et Expert Marketing Digital basé à Jérusalem. Spécialisé dans la création d'expériences digitales exceptionnelles avec des technologies modernes.
-            - generic [ref=e205]:
-              - link "GitHub" [ref=e206] [cursor=pointer]:
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - heading "Mes Projets" [level=1] [ref=e19]
+          - paragraph [ref=e20]: Une collection de projets futuristes combinant technologies avancées, design immersif et expériences utilisateur exceptionnelles.
+          - generic [ref=e21]:
+            - button "Tous les projets" [ref=e22] [cursor=pointer]
+            - button "Web Apps" [ref=e23] [cursor=pointer]
+            - button "Mobile Apps" [ref=e24] [cursor=pointer]
+            - button "Sites Web" [ref=e25] [cursor=pointer]
+            - button "E-commerce" [ref=e26] [cursor=pointer]
+        - generic [ref=e28]:
+          - generic [ref=e31]:
+            - generic [ref=e33]: ⭐ FEATURED
+            - generic [ref=e34]: 🌐
+            - generic [ref=e35]:
+              - generic [ref=e37]:
+                - heading "Futurist Cards" [level=3] [ref=e38]
+                - paragraph [ref=e39]: Plateforme moderne de cartes de visite digitales avec design futuriste et animations avancées.
+                - generic [ref=e40]:
+                  - generic [ref=e41]: React
+                  - generic [ref=e42]: Next.js
+                  - generic [ref=e43]: TypeScript
+                  - generic [ref=e44]: Framer Motion
+                  - generic [ref=e45]: Tailwind CSS
+              - generic [ref=e46]:
+                - link "Voir le projet" [ref=e47] [cursor=pointer]:
+                  - /url: https://futurist-cards.vercel.app
+                  - text: Voir le projet
+                  - img [ref=e48]
+                - generic [ref=e50]:
+                  - link "Voir le site live" [ref=e51] [cursor=pointer]:
+                    - /url: https://futurist-cards.vercel.app
+                    - img [ref=e52]
+                  - link "Code source" [ref=e54] [cursor=pointer]:
+                    - /url: https://github.com/shayacoca/futurist-cards
+                    - img [ref=e55]
+          - generic [ref=e59]:
+            - generic [ref=e61]: ⭐ FEATURED
+            - generic [ref=e62]: 📱
+            - generic [ref=e63]:
+              - generic [ref=e65]:
+                - heading "BiCards" [level=3] [ref=e66]
+                - paragraph [ref=e67]: Solution innovante de cartes de visite interactives avec intégration sociale et partage simplifié.
+                - generic [ref=e68]:
+                  - generic [ref=e69]: React Native
+                  - generic [ref=e70]: Node.js
+                  - generic [ref=e71]: MongoDB
+                  - generic [ref=e72]: Socket.io
+              - generic [ref=e73]:
+                - link "Voir le projet" [ref=e74] [cursor=pointer]:
+                  - /url: https://bicards.app
+                  - text: Voir le projet
+                  - img [ref=e75]
+                - generic [ref=e77]:
+                  - link "Voir le site live" [ref=e78] [cursor=pointer]:
+                    - /url: https://bicards.app
+                    - img [ref=e79]
+                  - link "Code source" [ref=e81] [cursor=pointer]:
+                    - /url: https://github.com/shayacoca/bicards
+                    - img [ref=e82]
+          - generic [ref=e86]:
+            - generic [ref=e87]: 💻
+            - generic [ref=e88]:
+              - generic [ref=e90]:
+                - heading "Site Vitrine Pro" [level=3] [ref=e91]
+                - paragraph [ref=e92]: Template de site vitrine professionnel avec CMS intégré et optimisation SEO avancée.
+                - generic [ref=e93]:
+                  - generic [ref=e94]: WordPress
+                  - generic [ref=e95]: PHP
+                  - generic [ref=e96]: MySQL
+                  - generic [ref=e97]: CSS3
+                  - generic [ref=e98]: JavaScript
+              - generic [ref=e99]:
+                - link "Voir le projet" [ref=e100] [cursor=pointer]:
+                  - /url: https://site-vitrine-pro.com
+                  - text: Voir le projet
+                  - img [ref=e101]
+                - generic [ref=e103]:
+                  - link "Voir le site live" [ref=e104] [cursor=pointer]:
+                    - /url: https://site-vitrine-pro.com
+                    - img [ref=e105]
+                  - link "Code source" [ref=e107] [cursor=pointer]:
+                    - /url: https://github.com/shayacoca/site-vitrine-pro
+                    - img [ref=e108]
+          - generic [ref=e112]:
+            - generic [ref=e113]: 🛒
+            - generic [ref=e114]:
+              - generic [ref=e116]:
+                - heading "E-commerce Platform" [level=3] [ref=e117]
+                - paragraph [ref=e118]: Plateforme e-commerce complète avec gestion des stocks, paiements et analytics en temps réel.
+                - generic [ref=e119]:
+                  - generic [ref=e120]: Next.js
+                  - generic [ref=e121]: Stripe
+                  - generic [ref=e122]: PostgreSQL
+                  - generic [ref=e123]: Redis
+                  - generic [ref=e124]: Docker
+              - generic [ref=e125]:
+                - link "Voir le projet" [ref=e126] [cursor=pointer]:
+                  - /url: "#"
+                  - text: Voir le projet
+                  - img [ref=e127]
+                - link "Code source" [ref=e130] [cursor=pointer]:
+                  - /url: https://github.com/shayacoca/ecommerce-platform
+                  - img [ref=e131]
+        - generic [ref=e134]:
+          - heading "Prêt à créer quelque chose d'extraordinaire ?" [level=3] [ref=e135]
+          - paragraph [ref=e136]: Discutons de votre prochain projet et transformons vos idées en réalité digitale immersive.
+          - link "Démarrer un projet" [ref=e137] [cursor=pointer]:
+            - /url: /contact
+            - text: Démarrer un projet
+            - img [ref=e138]
+    - contentinfo [ref=e140]:
+      - generic [ref=e142]:
+        - generic [ref=e143]:
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - generic [ref=e147]: SA
+              - generic [ref=e148]: Shay Acoca
+            - paragraph [ref=e149]: Développeur Full-Stack et Expert Marketing Digital basé à Jérusalem. Spécialisé dans la création d'expériences digitales exceptionnelles avec des technologies modernes.
+            - generic [ref=e150]:
+              - link "GitHub" [ref=e151] [cursor=pointer]:
                 - /url: https://github.com/shayacoca
-                - img [ref=e207]
-              - link "LinkedIn" [ref=e209] [cursor=pointer]:
+                - img [ref=e152]
+              - link "LinkedIn" [ref=e154] [cursor=pointer]:
                 - /url: https://linkedin.com/in/shayacoca
-                - img [ref=e210]
-              - link "Email" [ref=e212] [cursor=pointer]:
+                - img [ref=e155]
+              - link "Email" [ref=e157] [cursor=pointer]:
                 - /url: mailto:shay.acoca@example.com
-                - img [ref=e213]
-          - generic [ref=e215]:
-            - heading "Navigation" [level=3] [ref=e216]
-            - list [ref=e217]:
-              - listitem [ref=e218]:
-                - link "Accueil" [ref=e219] [cursor=pointer]:
+                - img [ref=e158]
+          - generic [ref=e160]:
+            - heading "Navigation" [level=3] [ref=e161]
+            - list [ref=e162]:
+              - listitem [ref=e163]:
+                - link "Accueil" [ref=e164] [cursor=pointer]:
                   - /url: /
-              - listitem [ref=e220]:
-                - link "À Propos" [ref=e221] [cursor=pointer]:
+              - listitem [ref=e165]:
+                - link "À Propos" [ref=e166] [cursor=pointer]:
                   - /url: /about
-              - listitem [ref=e222]:
-                - link "Projets" [ref=e223] [cursor=pointer]:
+              - listitem [ref=e167]:
+                - link "Projets" [ref=e168] [cursor=pointer]:
                   - /url: /projects
-              - listitem [ref=e224]:
-                - link "Contact" [ref=e225] [cursor=pointer]:
+              - listitem [ref=e169]:
+                - link "Contact" [ref=e170] [cursor=pointer]:
                   - /url: /contact
-              - listitem [ref=e226]:
-                - link "CV" [ref=e227] [cursor=pointer]:
+              - listitem [ref=e171]:
+                - link "CV" [ref=e172] [cursor=pointer]:
                   - /url: /cv
-          - generic [ref=e228]:
-            - heading "Services" [level=3] [ref=e229]
-            - list [ref=e230]:
-              - listitem [ref=e231]: Développement Web
-              - listitem [ref=e232]: Marketing Digital
-              - listitem [ref=e233]: UI/UX Design
-              - listitem [ref=e234]: Consulting Tech
-            - generic [ref=e235]:
-              - paragraph [ref=e236]:
-                - generic [ref=e237]: 📍
+          - generic [ref=e173]:
+            - heading "Services" [level=3] [ref=e174]
+            - list [ref=e175]:
+              - listitem [ref=e176]: Développement Web
+              - listitem [ref=e177]: Marketing Digital
+              - listitem [ref=e178]: UI/UX Design
+              - listitem [ref=e179]: Consulting Tech
+            - generic [ref=e180]:
+              - paragraph [ref=e181]:
+                - generic [ref=e182]: 📍
                 - text: Jérusalem, Israël
-              - paragraph [ref=e238]:
-                - generic [ref=e239]: 📧
+              - paragraph [ref=e183]:
+                - generic [ref=e184]: 📧
                 - text: shay.acoca@example.com
-              - paragraph [ref=e240]:
-                - generic [ref=e241]: ⏰
+              - paragraph [ref=e185]:
+                - generic [ref=e186]: ⏰
                 - text: Réponse sous 24h
-        - generic [ref=e242]:
-          - paragraph [ref=e243]: © 2025 Shay Acoca. Tous droits réservés.
-          - generic [ref=e244]:
-            - generic [ref=e245]: Disponible pour projets
-            - generic [ref=e247]:
-              - link "Mentions légales" [ref=e248] [cursor=pointer]:
+        - generic [ref=e187]:
+          - paragraph [ref=e188]: © 2025 Shay Acoca. Tous droits réservés.
+          - generic [ref=e189]:
+            - generic [ref=e190]: Disponible pour projets
+            - generic [ref=e192]:
+              - link "Mentions légales" [ref=e193] [cursor=pointer]:
                 - /url: /legal
-              - link "Confidentialité" [ref=e249] [cursor=pointer]:
+              - link "Confidentialité" [ref=e194] [cursor=pointer]:
                 - /url: /privacy
-  - alert [ref=e250]
+  - alert [ref=e195]
 ```

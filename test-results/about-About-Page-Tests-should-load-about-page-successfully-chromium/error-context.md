@@ -1,0 +1,188 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - link "SA Shay Acoca" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e8]: SA
+          - generic [ref=e9]: Shay Acoca
+        - generic [ref=e10]:
+          - link "Accueil" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - link "À Propos" [ref=e14] [cursor=pointer]:
+            - /url: /about
+          - link "Projets" [ref=e16] [cursor=pointer]:
+            - /url: /projects
+          - link "Contact" [ref=e18] [cursor=pointer]:
+            - /url: /contact
+          - link "CV" [ref=e20] [cursor=pointer]:
+            - /url: /cv
+          - button "Switch to light mode" [ref=e22] [cursor=pointer]:
+            - generic [ref=e23]:
+              - img
+              - img [ref=e24]
+    - main [ref=e26]:
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - heading "À Propos" [level=1] [ref=e30]
+          - paragraph [ref=e31]: Digital Marketer & Full-Stack Developer basé à Jérusalem, je transforme les idées en solutions digitales performantes.
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - generic [ref=e34]:
+              - heading "Mon Parcours" [level=2] [ref=e35]
+              - generic [ref=e36]:
+                - paragraph [ref=e37]: Passionné par l'innovation digitale, j'ai débuté ma carrière dans le marketing digital chez Bezeq (2022-2024) où j'ai développé une expertise approfondie en stratégie multi-canaux et analytics.
+                - paragraph [ref=e38]: Aujourd'hui, je me spécialise dans le développement Full-Stack avec une formation intensive chez HackerU (400h), maîtrisant les technologies modernes comme React, Next.js, Node.js et MongoDB.
+                - paragraph [ref=e39]: Cette double expertise marketing/tech me permet de créer des solutions complètes qui allient performance technique et impact business mesurable.
+            - generic [ref=e40]:
+              - heading "Ma Mission" [level=3] [ref=e41]
+              - paragraph [ref=e42]: Transformer les visions entrepreneuriales en réalités digitales performantes. Je crois en la puissance de la technologie au service des objectifs business concrets.
+              - generic [ref=e43]:
+                - generic [ref=e44]: Innovation
+                - generic [ref=e45]: Performance
+                - generic [ref=e46]: ROI
+                - generic [ref=e47]: User Experience
+          - generic [ref=e48]:
+            - generic [ref=e49]:
+              - heading "Timeline" [level=3] [ref=e50]
+              - generic [ref=e51]:
+                - generic [ref=e52]:
+                  - generic [ref=e55]: 2024 - Présent
+                  - heading "Full-Stack Developer Freelance" [level=4] [ref=e56]
+                  - paragraph [ref=e57]: Développement d'applications web • React, Next.js, Node.js, MongoDB
+                - generic [ref=e58]:
+                  - generic [ref=e61]: 2022 - 2024
+                  - heading "Digital Marketing Specialist • Bezeq" [level=4] [ref=e62]
+                  - paragraph [ref=e63]: Stratégie digitale • Campagnes ROI • Meta Business • Analytics
+                - generic [ref=e64]:
+                  - generic [ref=e66]: "2024"
+                  - heading "Formation HackerU (400h)" [level=4] [ref=e67]
+                  - paragraph [ref=e68]: Full-Stack Development • Certifications • Projets pratiques
+            - generic [ref=e69]:
+              - heading "Certifications" [level=3] [ref=e70]
+              - generic [ref=e71]:
+                - generic [ref=e74]: Meta Blueprint Certified
+                - generic [ref=e77]: Wix Expert Partner
+                - generic [ref=e80]: Figma UI/UX Design
+                - generic [ref=e83]: Google Analytics Certified
+        - generic [ref=e84]:
+          - heading "Stack Technique" [level=3] [ref=e85]
+          - generic [ref=e86]:
+            - generic [ref=e87]:
+              - generic [ref=e89]: 🔧
+              - heading "Frontend" [level=4] [ref=e90]
+              - generic [ref=e91]:
+                - generic [ref=e92]: React
+                - generic [ref=e93]: Next.js
+                - generic [ref=e94]: TypeScript
+                - generic [ref=e95]: Tailwind CSS
+            - generic [ref=e96]:
+              - generic [ref=e98]: 🔧
+              - heading "Backend" [level=4] [ref=e99]
+              - generic [ref=e100]:
+                - generic [ref=e101]: Node.js
+                - generic [ref=e102]: Express
+                - generic [ref=e103]: MongoDB
+                - generic [ref=e104]: JWT
+            - generic [ref=e105]:
+              - generic [ref=e107]: 🔧
+              - heading "Design" [level=4] [ref=e108]
+              - generic [ref=e109]:
+                - generic [ref=e110]: Figma
+                - generic [ref=e111]: Adobe Suite
+                - generic [ref=e112]: UI/UX
+                - generic [ref=e113]: Responsive
+            - generic [ref=e114]:
+              - generic [ref=e116]: 🔧
+              - heading "Marketing" [level=4] [ref=e117]
+              - generic [ref=e118]:
+                - generic [ref=e119]: Meta Business
+                - generic [ref=e120]: Analytics
+                - generic [ref=e121]: SEO
+                - generic [ref=e122]: WordPress
+        - generic [ref=e123]:
+          - generic [ref=e124]:
+            - generic [ref=e125]: 3+
+            - generic [ref=e126]: Années expérience
+            - generic [ref=e127]: Marketing & Tech
+          - generic [ref=e128]:
+            - generic [ref=e129]: 50+
+            - generic [ref=e130]: Clients satisfaits
+            - generic [ref=e131]: Projets réussis
+          - generic [ref=e132]:
+            - generic [ref=e133]: 30+
+            - generic [ref=e134]: Projets réalisés
+            - generic [ref=e135]: Web & Mobile
+        - generic [ref=e137]:
+          - heading "Collaborons ensemble !" [level=3] [ref=e138]
+          - paragraph [ref=e139]: Prêt à transformer votre vision en réalité digitale ? Discutons de votre projet.
+          - generic [ref=e140]:
+            - button "Voir mes projets" [ref=e141] [cursor=pointer]
+            - button "Me contacter" [ref=e142] [cursor=pointer]
+    - contentinfo [ref=e143]:
+      - generic [ref=e145]:
+        - generic [ref=e146]:
+          - generic [ref=e147]:
+            - generic [ref=e148]:
+              - generic [ref=e150]: SA
+              - generic [ref=e151]: Shay Acoca
+            - paragraph [ref=e152]: Développeur Full-Stack et Expert Marketing Digital basé à Jérusalem. Spécialisé dans la création d'expériences digitales exceptionnelles avec des technologies modernes.
+            - generic [ref=e153]:
+              - link "GitHub" [ref=e154] [cursor=pointer]:
+                - /url: https://github.com/shayacoca
+                - img [ref=e155]
+              - link "LinkedIn" [ref=e157] [cursor=pointer]:
+                - /url: https://linkedin.com/in/shayacoca
+                - img [ref=e158]
+              - link "Email" [ref=e160] [cursor=pointer]:
+                - /url: mailto:shay.acoca@example.com
+                - img [ref=e161]
+          - generic [ref=e163]:
+            - heading "Navigation" [level=3] [ref=e164]
+            - list [ref=e165]:
+              - listitem [ref=e166]:
+                - link "Accueil" [ref=e167] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e168]:
+                - link "À Propos" [ref=e169] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e170]:
+                - link "Projets" [ref=e171] [cursor=pointer]:
+                  - /url: /projects
+              - listitem [ref=e172]:
+                - link "Contact" [ref=e173] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=e174]:
+                - link "CV" [ref=e175] [cursor=pointer]:
+                  - /url: /cv
+          - generic [ref=e176]:
+            - heading "Services" [level=3] [ref=e177]
+            - list [ref=e178]:
+              - listitem [ref=e179]: Développement Web
+              - listitem [ref=e180]: Marketing Digital
+              - listitem [ref=e181]: UI/UX Design
+              - listitem [ref=e182]: Consulting Tech
+            - generic [ref=e183]:
+              - paragraph [ref=e184]:
+                - generic [ref=e185]: 📍
+                - text: Jérusalem, Israël
+              - paragraph [ref=e186]:
+                - generic [ref=e187]: 📧
+                - text: shay.acoca@example.com
+              - paragraph [ref=e188]:
+                - generic [ref=e189]: ⏰
+                - text: Réponse sous 24h
+        - generic [ref=e190]:
+          - paragraph [ref=e191]: © 2025 Shay Acoca. Tous droits réservés.
+          - generic [ref=e192]:
+            - generic [ref=e193]: Disponible pour projets
+            - generic [ref=e195]:
+              - link "Mentions légales" [ref=e196] [cursor=pointer]:
+                - /url: /legal
+              - link "Confidentialité" [ref=e197] [cursor=pointer]:
+                - /url: /privacy
+  - alert [ref=e198]
+```
