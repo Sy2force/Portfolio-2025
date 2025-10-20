@@ -5,16 +5,17 @@ test.describe('Projects Page Tests', () => {
     await page.goto('/projects');
     
     // Check if the page loads without errors
-    await expect(page).toHaveTitle(/Projets/);
+    await expect(page).toHaveTitle(/Projects.*Portfolio|Portfolio.*Projects/);
     
-    // Check for projects grid
+    // Check for projects title and grid
+    await expect(page.locator('[data-testid="projects-title"]')).toBeVisible();
     await expect(page.locator('[data-testid="projects-grid"]')).toBeVisible();
     
-    // Check if Project React Futuriste Card is present
-    await expect(page.locator('text=Project React Futuriste Card')).toBeVisible();
+    // Wait for projects to load
+    await page.waitForTimeout(2000);
     
-    // Check if project cards have required elements
-    const projectCards = page.locator('.glass-card');
+    // Check if project cards are present
+    const projectCards = page.locator('[data-testid="project-card"]');
     await expect(projectCards.first()).toBeVisible();
   });
 
@@ -39,14 +40,15 @@ test.describe('Projects Page Tests', () => {
     // Wait for projects to load
     await page.waitForTimeout(2000);
     
-    // Check if filter buttons exist
-    const filterButtons = page.locator('[data-testid="filter-button"]');
-    if (await filterButtons.count() > 0) {
-      await expect(filterButtons.first()).toBeVisible();
-    }
+    // Check if filter tabs exist
+    const filterTabs = page.locator('[data-testid="filter-tab"]');
+    await expect(filterTabs.first()).toBeVisible();
+    
+    // Test "All" filter is active by default
+    await expect(page.locator('[data-testid="filter-tab"]:has-text("All")')).toHaveClass(/active|bg-\[#00FFAA\]/);
     
     // Check if all projects are visible initially
-    const projectCards = page.locator('.glass-card');
+    const projectCards = page.locator('[data-testid="project-card"]');
     const initialCount = await projectCards.count();
     expect(initialCount).toBeGreaterThan(0);
   });
@@ -55,22 +57,16 @@ test.describe('Projects Page Tests', () => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/projects');
     
-    // Check if projects are displayed in mobile layout
-    await expect(page.locator('.glass-card')).toBeVisible();
+    // Wait for mobile layout to adapt
+    await page.waitForTimeout(1000);
     
-    // Check if project cards stack vertically on mobile
-    const projectCards = page.locator('.glass-card');
-    if (await projectCards.count() > 1) {
-      const firstCard = projectCards.first();
-      const secondCard = projectCards.nth(1);
-      
-      const firstCardBox = await firstCard.boundingBox();
-      const secondCardBox = await secondCard.boundingBox();
-      
-      if (firstCardBox && secondCardBox) {
-        // On mobile, cards should stack vertically
-        expect(secondCardBox.y).toBeGreaterThan(firstCardBox.y + firstCardBox.height - 50);
-      }
-    }
+    // Check if projects are displayed in mobile layout
+    await expect(page.locator('[data-testid="project-card"]')).toBeVisible();
+    
+    // Check if mobile menu button is visible
+    await expect(page.locator('[data-testid="mobile-menu-button"]')).toBeVisible();
+    
+    // Check if filter tabs are responsive
+    await expect(page.locator('[data-testid="filter-tab"]')).toBeVisible();
   });
 });

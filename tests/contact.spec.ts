@@ -5,14 +5,16 @@ test.describe('Contact Page Tests', () => {
     await page.goto('/contact');
     
     // Check if the page loads without errors
-    await expect(page).toHaveTitle(/Contact/);
+    await expect(page).toHaveTitle(/Contact.*Portfolio|Portfolio.*Contact/);
     
-    // Check for contact form
-    await expect(page.locator('form')).toBeVisible();
+    // Check for contact title and form
+    await expect(page.locator('[data-testid="contact-title"]')).toBeVisible();
+    await expect(page.locator('[data-testid="contact-form"]')).toBeVisible();
     
     // Check for required form fields
     await expect(page.locator('input[name="name"]')).toBeVisible();
     await expect(page.locator('input[name="email"]')).toBeVisible();
+    await expect(page.locator('input[name="subject"]')).toBeVisible();
     await expect(page.locator('textarea[name="message"]')).toBeVisible();
   });
 
@@ -20,10 +22,17 @@ test.describe('Contact Page Tests', () => {
     await page.goto('/contact');
     
     // Try to submit empty form
-    await page.click('button[type="submit"]');
+    await page.click('[data-testid="submit-button"]');
     
-    // Check for validation messages
-    await expect(page.locator('text=Ce champ est requis')).toBeVisible();
+    // Check for HTML5 validation (required fields)
+    const nameInput = page.locator('input[name="name"]');
+    await expect(nameInput).toHaveAttribute('required');
+    
+    const emailInput = page.locator('input[name="email"]');
+    await expect(emailInput).toHaveAttribute('required');
+    
+    const messageInput = page.locator('textarea[name="message"]');
+    await expect(messageInput).toHaveAttribute('required');
   });
 
   test('should fill and submit contact form', async ({ page }) => {
@@ -32,10 +41,14 @@ test.describe('Contact Page Tests', () => {
     // Fill out the form
     await page.fill('input[name="name"]', 'Test User');
     await page.fill('input[name="email"]', 'test@example.com');
+    await page.fill('input[name="subject"]', 'Test Subject');
     await page.fill('textarea[name="message"]', 'This is a test message');
     
     // Submit the form
-    await page.click('button[type="submit"]');
+    await page.click('[data-testid="submit-button"]');
+    
+    // Wait for loading state
+    await expect(page.locator('[data-testid="submit-button"]')).toContainText('Envoi en cours...');
     
     // Wait for response (success or error message)
     await page.waitForTimeout(3000);

@@ -9,20 +9,52 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Portfolio Shay Acoca - Développeur Full-Stack & Expert Marketing',
-  description: 'Portfolio professionnel de Shay Acoca, développeur full-stack et expert en marketing digital basé à Jérusalem.',
-  keywords: 'Shay Acoca, développeur full-stack, marketing digital, Next.js, React, Node.js, MongoDB, Jérusalem',
-  authors: [{ name: 'Shay Acoca' }],
+  description: 'Portfolio professionnel de Shay Acoca, développeur full-stack et expert en marketing digital basé à Jérusalem. Spécialisé en React, Next.js, Node.js, MongoDB et stratégies digitales innovantes.',
+  keywords: ['Shay Acoca', 'développeur full-stack', 'marketing digital', 'Next.js', 'React', 'Node.js', 'MongoDB', 'TypeScript', 'Tailwind CSS', 'Jérusalem', 'Israël', 'portfolio', 'développeur web', 'expert marketing'],
+  authors: [{ name: 'Shay Acoca', url: 'https://portfolio-2025-ashy-theta.vercel.app' }],
+  creator: 'Shay Acoca',
+  publisher: 'Shay Acoca',
+  category: 'technology',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: 'Portfolio Shay Acoca - Développeur Full-Stack & Expert Marketing',
-    description: 'Portfolio professionnel de Shay Acoca, développeur full-stack et expert en marketing digital basé à Jérusalem.',
+    description: 'Portfolio professionnel de Shay Acoca, développeur full-stack et expert en marketing digital basé à Jérusalem. Découvrez mes projets innovants et compétences techniques.',
     type: 'website',
     locale: 'fr_FR',
+    url: 'https://portfolio-2025-ashy-theta.vercel.app',
+    siteName: 'Portfolio Shay Acoca',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Portfolio Shay Acoca - Développeur Full-Stack',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Portfolio Shay Acoca - Développeur Full-Stack & Expert Marketing',
     description: 'Portfolio professionnel de Shay Acoca, développeur full-stack et expert en marketing digital basé à Jérusalem.',
+    images: ['/images/og-image.jpg'],
+    creator: '@shayacoca',
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/manifest.json',
 };
 
 export const viewport = {

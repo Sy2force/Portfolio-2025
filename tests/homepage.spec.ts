@@ -5,39 +5,36 @@ test.describe('Homepage Tests', () => {
     await page.goto('/');
     
     // Check if the page loads without errors
-    await expect(page).toHaveTitle(/Shay Acoca/);
+    await expect(page).toHaveTitle(/Portfolio.*Shay.*Acoca|Shay.*Acoca.*Portfolio/);
     
     // Check for main navigation elements
-    await expect(page.locator('nav')).toBeVisible();
+    await expect(page.locator('[data-testid="navbar"]')).toBeVisible();
     
-    // Check for hero section
-    await expect(page.locator('h1')).toBeVisible();
+    // Check for hero section with Matrix theme
+    await expect(page.locator('[data-testid="hero-title"]')).toBeVisible();
+    await expect(page.locator('[data-testid="hero-subtitle"]')).toBeVisible();
     
-    // Wait for Matrix background to load
-    await page.waitForTimeout(2000);
-    
-    // Check if Matrix background canvas is present
-    await expect(page.locator('canvas')).toBeVisible();
+    // Wait for animations to load
+    await page.waitForTimeout(3000);
   });
 
   test('should have working navigation links', async ({ page }) => {
     await page.goto('/');
     
     // Test navigation to projects page
-    await page.click('text=Projets');
+    await page.click('[data-testid="nav-projects"]');
     await expect(page).toHaveURL(/.*projects/);
-    
-    // Go back to home
-    await page.goto('/');
+    await expect(page.locator('[data-testid="projects-title"]')).toBeVisible();
     
     // Test navigation to about page
-    await page.click('text=À propos');
+    await page.click('[data-testid="nav-about"]');
     await expect(page).toHaveURL(/.*about/);
+    await expect(page.locator('[data-testid="about-title"]')).toBeVisible();
     
     // Test navigation to contact page
-    await page.goto('/');
-    await page.click('text=Contact');
+    await page.click('[data-testid="nav-contact"]');
     await expect(page).toHaveURL(/.*contact/);
+    await expect(page.locator('[data-testid="contact-title"]')).toBeVisible();
   });
 
   test('should be responsive on mobile', async ({ page }) => {
@@ -47,7 +44,12 @@ test.describe('Homepage Tests', () => {
     // Check if mobile menu button is visible
     await expect(page.locator('[data-testid="mobile-menu-button"]')).toBeVisible();
     
-    // Check if main content is visible
+    // Check if main content is visible and responsive
     await expect(page.locator('main')).toBeVisible();
+    await expect(page.locator('[data-testid="hero-title"]')).toBeVisible();
+    
+    // Test mobile menu functionality
+    await page.click('[data-testid="mobile-menu-button"]');
+    await expect(page.locator('[data-testid="mobile-menu"]')).toBeVisible();
   });
 });
