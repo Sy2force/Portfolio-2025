@@ -5,7 +5,7 @@ test.describe('Homepage Tests', () => {
     await page.goto('/');
     
     // Check if the page loads without errors
-    await expect(page).toHaveTitle(/Portfolio Shay Acoca.*Développeur Full-Stack.*Expert Marketing/);
+    await expect(page).toHaveTitle(/Portfolio Shay Acoca - Développeur Full-Stack & Expert Marketing/);
     
     // Check for main navigation elements
     await expect(page.locator('[data-testid="navbar"]')).toBeVisible();
