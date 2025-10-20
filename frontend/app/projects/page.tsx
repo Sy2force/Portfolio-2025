@@ -162,7 +162,7 @@ export default function ProjectsPage() {
                   onClick={() => setSelectedCategory(category.key)}
                   data-testid="filter-tab"
                   aria-label={`Filtrer par ${category.label}`}
-                  aria-pressed={isSelected ? "true" : "false"}
+                  aria-current={isSelected ? "true" : undefined}
                   className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                     isSelected
                       ? 'bg-gradient-to-r from-[#00FFAA] to-[#888EF0] text-[#0a0a23] shadow-matrix'
