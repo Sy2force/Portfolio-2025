@@ -106,7 +106,7 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold matrix-text-animated mb-6 font-secondary">
+          <h1 data-testid="contact-title" className="text-4xl md:text-6xl font-bold matrix-text-animated mb-6 font-secondary">
             Contactez-moi
           </h1>
           
@@ -174,7 +174,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="lg:col-span-2"
           >
-            <form onSubmit={handleSubmit} className="glass-card p-8">
+            <form onSubmit={handleSubmit} className="glass-card p-8" data-testid="contact-form">
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-[#00FFAA]/20 border border-[#00FFAA]/30 text-[#00FFAA] rounded-2xl glass-card">
                   Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.
@@ -199,6 +199,8 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    aria-required="true"
+                    aria-label="Nom complet"
                     className="w-full px-6 py-4 glass-input text-white placeholder-white/50 transition-all duration-300 focus:ring-2 focus:ring-[#00FFAA] focus:border-[#00FFAA]"
                     placeholder="Votre nom"
                   />
@@ -215,6 +217,8 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    aria-required="true"
+                    aria-label="Adresse email"
                     className="w-full px-6 py-4 glass-input text-white placeholder-white/50 transition-all duration-300 focus:ring-2 focus:ring-[#00FFAA] focus:border-[#00FFAA]"
                     placeholder="votre@email.com"
                   />
@@ -232,6 +236,8 @@ export default function ContactPage() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
+                  aria-required="true"
+                  aria-label="Sujet du message"
                   minLength={5}
                   className="w-full px-6 py-4 glass-input text-white placeholder-white/50 transition-all duration-300 focus:ring-2 focus:ring-[#00FFAA] focus:border-[#00FFAA]"
                   placeholder="Sujet de votre message"
@@ -248,6 +254,8 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  aria-required="true"
+                  aria-label="Message"
                   minLength={10}
                   rows={6}
                   className="w-full px-6 py-4 glass-input text-white placeholder-white/50 resize-none transition-all duration-300 focus:ring-2 focus:ring-[#00FFAA] focus:border-[#00FFAA]"
@@ -258,6 +266,8 @@ export default function ContactPage() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
+                data-testid="submit-button"
+                aria-label={isSubmitting ? "Envoi en cours" : "Envoyer le message"}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full bg-gradient-to-r from-[#3C3C66] to-[#00FFAA] hover:from-[#888EF0] hover:to-[#00FFAA] disabled:from-gray-500 disabled:to-gray-600 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-matrix flex items-center justify-center gap-3 text-lg"

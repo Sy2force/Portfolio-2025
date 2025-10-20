@@ -66,7 +66,7 @@ export default function CVPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold matrix-text font-matrix mb-8">
+            <h1 data-testid="cv-title" className="text-5xl md:text-6xl font-bold matrix-text font-matrix mb-8">
               Mon CV
             </h1>
             

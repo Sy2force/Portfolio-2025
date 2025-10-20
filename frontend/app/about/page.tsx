@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Button from '@/components/ui/Button';
+import Button from '../../components/ui/Button';
 
 const AboutPage = () => {
   useEffect(() => {
@@ -26,13 +26,13 @@ const AboutPage = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold matrix-text-animated mb-6 font-secondary">À Propos</h1>
+          <h1 data-testid="about-title" className="text-4xl md:text-6xl font-bold matrix-text-animated mb-6 font-secondary">À Propos</h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
             Digital Marketer & Full-Stack Developer basé à Jérusalem, je transforme les idées en solutions digitales performantes.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 mb-20">
+        <div className="grid lg:grid-cols-2 gap-16 mb-20" data-testid="about-content">
           {/* Story & Mission */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
@@ -84,7 +84,7 @@ const AboutPage = () => {
             className="space-y-8"
           >
             {/* Experience Timeline */}
-            <div className="glass-card p-8">
+            <div className="glass-card p-8" data-testid="experience-section">
               <h3 className="text-2xl font-bold matrix-text mb-6 font-secondary">Timeline</h3>
               <div className="space-y-6">
                 <motion.div 
@@ -189,7 +189,7 @@ const AboutPage = () => {
                 <h4 className="text-lg font-bold matrix-text mb-3 font-secondary">{category.category}</h4>
                 <div className="space-y-2">
                   {category.skills.map((skill) => (
-                    <div key={skill} className="text-white/70 text-sm">{skill}</div>
+                    <div key={skill} className="text-white/70 text-sm" data-testid="skill-item">{skill}</div>
                   ))}
                 </div>
               </motion.div>

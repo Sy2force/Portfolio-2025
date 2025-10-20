@@ -61,6 +61,7 @@ export default function Hero() {
 
         {/* Main Title */}
         <motion.h1
+          data-testid="hero-title"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -72,6 +73,7 @@ export default function Hero() {
 
         {/* Subtitle */}
         <motion.p
+          data-testid="hero-subtitle"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}

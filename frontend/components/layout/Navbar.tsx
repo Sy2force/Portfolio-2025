@@ -24,6 +24,7 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.nav 
+      data-testid="navbar"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -56,6 +57,7 @@ const Navbar: React.FC = () => {
               >
                 <Link
                   href={item.href}
+                  data-testid={`nav-${item.href === '/about' ? 'about' : item.href === '/projects' ? 'projects' : item.href === '/contact' ? 'contact' : item.href === '/cv' ? 'cv' : 'home'}`}
                   className={`nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-matrix-primary focus:ring-offset-2 focus:ring-offset-transparent focus-visible:ring-2 ${
                     isActive(item.href)
                       ? 'text-matrix-dark bg-matrix-primary shadow-matrix'
@@ -104,6 +106,7 @@ const Navbar: React.FC = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <motion.div 
+            data-testid="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="md:hidden mt-4"

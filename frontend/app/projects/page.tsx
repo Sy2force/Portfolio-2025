@@ -134,7 +134,7 @@ export default function ProjectsPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold matrix-text-animated mb-6 font-secondary">
+          <h1 data-testid="projects-title" className="text-4xl md:text-6xl font-bold matrix-text-animated mb-6 font-secondary">
             Mes Projets
           </h1>
           <motion.p 
@@ -158,6 +158,9 @@ export default function ProjectsPage() {
               <button
                 key={category.key}
                 onClick={() => setSelectedCategory(category.key)}
+                data-testid="filter-tab"
+                aria-label={`Filtrer par ${category.label}`}
+                aria-pressed={selectedCategory === category.key ? "true" : "false"}
                 className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                   selectedCategory === category.key
                     ? 'bg-gradient-to-r from-[#00FFAA] to-[#888EF0] text-[#0a0a23] shadow-matrix'
@@ -201,6 +204,7 @@ export default function ProjectsPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group relative"
+                  data-testid="project-card"
                 >
                   {/* Glow Effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-[#3C3C66]/20 to-[#00FFAA]/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
@@ -271,6 +275,7 @@ export default function ProjectsPage() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="p-3 text-white/70 hover:text-[#00FFAA] transition-all duration-300 glass-card hover:bg-[#00FFAA]/10 hover:border-[#00FFAA]/20 rounded-xl group"
+                              aria-label={`Voir le site live de ${project.title}`}
                               title="Voir le site live"
                             >
                               <ExternalLinkIcon />
@@ -282,6 +287,7 @@ export default function ProjectsPage() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="p-3 text-white/70 hover:text-[#888EF0] transition-all duration-300 glass-card hover:bg-[#888EF0]/10 hover:border-[#888EF0]/20 rounded-xl group"
+                              aria-label={`Voir le code source de ${project.title}`}
                               title="Code source"
                             >
                               <GithubIcon />

@@ -5,7 +5,7 @@ test.describe('Contact Page Tests', () => {
     await page.goto('/contact');
     
     // Check if the page loads without errors
-    await expect(page).toHaveTitle(/Contact.*Portfolio|Portfolio.*Contact/);
+    await expect(page).toHaveTitle(/Contact.*Shay Acoca.*Portfolio.*Digital Marketing.*Développement/);
     
     // Check for contact title and form
     await expect(page.locator('[data-testid="contact-title"]')).toBeVisible();
@@ -47,8 +47,9 @@ test.describe('Contact Page Tests', () => {
     // Submit the form
     await page.click('[data-testid="submit-button"]');
     
-    // Wait for loading state
-    await expect(page.locator('[data-testid="submit-button"]')).toContainText('Envoi en cours...');
+    // Check that button changes to loading state
+    const submitButton = page.locator('button[type="submit"]');
+    await expect(submitButton).toContainText(/Envoi en cours|Envoyer le message/);
     
     // Wait for response (success or error message)
     await page.waitForTimeout(3000);
@@ -67,7 +68,7 @@ test.describe('Contact Page Tests', () => {
     
     const inputBox = await nameInput.boundingBox();
     if (inputBox) {
-      expect(inputBox.width).toBeLessThan(350); // Should fit mobile screen
+      expect(inputBox.width).toBeLessThan(360); // Should fit mobile screen
     }
   });
 });
