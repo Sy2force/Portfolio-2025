@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: 'export',
+  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
   experimental: {
     optimizePackageImports: ['framer-motion'],
     turbo: {
